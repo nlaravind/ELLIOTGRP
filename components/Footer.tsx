@@ -4,6 +4,17 @@ import { Twitter, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { VERTICALS } from '../constants';
 
 export const Footer: React.FC = () => {
+  const footerSectors = [
+    { id: 'crypto', label: 'Elliott Crypto' },
+    { id: 'ev', label: 'Elliot EV Business' },
+    { id: 'realestate', label: 'Elliot Real Estate' },
+    { id: 'blockchain', label: 'Elliott Blockchain' },
+    { id: 'cafe', label: 'Cafe Elliot' },
+    { id: 'fintech', label: 'Elliot Fintech' },
+    { id: 'aviation', label: 'ElliotAviation' },
+    { id: 'sustainable-energy', label: 'Elliot Sustainable Energy' },
+  ];
+
   return (
     <footer className="bg-navy-deep border-t border-navy-lighter pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -30,19 +41,11 @@ export const Footer: React.FC = () => {
           <div>
             <h5 className="text-silver font-bold uppercase tracking-widest mb-6 text-sm">Sectors</h5>
             <ul className="space-y-3 text-sm text-silver-dim">
-              {VERTICALS.map((v) => {
-                // derive human label from title
-                let label = v.title.replace(/^ELLIOT\s+/i, '');
-                label = label.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
-                if (v.id === 'ev') {
-                  label = 'EV Business';
-                }
-                return (
-                  <li key={v.id} className="hover:text-gold cursor-pointer transition-colors">
-                    {label}
-                  </li>
-                );
-              })}
+              {footerSectors.map((sector) => (
+                <li key={sector.id} className="hover:text-gold cursor-pointer transition-colors">
+                  {sector.label}
+                </li>
+              ))}
             </ul>
           </div>
 
