@@ -19,7 +19,7 @@ export const CafePage: React.FC = () => {
             <Coffee size={64} className="text-gold" />
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            Cafe Elliot
+            Cafe Elliott
           </h1>
           <h2 className="text-gold tracking-[0.3em] text-lg md:text-xl font-bold mb-6 uppercase">
             Where Vision Meets Conversation
@@ -36,12 +36,12 @@ export const CafePage: React.FC = () => {
       {/* About Division */}
       <section className="py-24 bg-navy">
         <div className="container mx-auto px-6">
-          <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Cafe Elliot</h2>
+          <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Cafe Elliott</h2>
           <h3 className="font-serif text-4xl text-silver mb-8 leading-tight">
             Boutique Café Brand <span className="text-gold italic">Under Elliot Group</span>
           </h3>
           <p className="text-silver-dim text-lg mb-8 max-w-3xl">
-            Cafe Elliot is more than a coffee shop—it's a vibrant ecosystem where urban professionals, entrepreneurs, and creative minds converge. We craft premium beverage experiences while fostering innovation and meaningful connections.
+            Cafe Elliott is more than a coffee shop—it's a vibrant ecosystem where urban professionals, entrepreneurs, and creative minds converge. We craft premium beverage experiences while fostering innovation and meaningful connections.
           </p>
         </div>
       </section>
@@ -119,7 +119,7 @@ export const CafePage: React.FC = () => {
             </div>
             <div className="text-center">
               <h4 className="font-bold text-gold text-lg mb-4">Franchise Model</h4>
-              <p className="text-silver-dim">Scalable partnerships bringing Cafe Elliot to major Indian cities.</p>
+              <p className="text-silver-dim">Scalable partnerships bringing Cafe Elliott to major Indian cities.</p>
             </div>
             <div className="text-center">
               <h4 className="font-bold text-gold text-lg mb-4">Smart Café Tech</h4>
@@ -134,7 +134,7 @@ export const CafePage: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-navy mb-8">Join the Community</h2>
           <button className="inline-block px-12 py-4 border border-navy text-navy font-bold uppercase tracking-[0.2em] hover:bg-navy hover:text-gold transition-all duration-300">
-            Visit Cafe Elliot
+            Visit Cafe Elliott
           </button>
         </div>
       </section>

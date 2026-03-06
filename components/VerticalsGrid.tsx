@@ -29,8 +29,8 @@ export const VerticalsGrid: React.FC = () => {
               key={vertical.id}
               to={routeMap[vertical.id]}
               className={`group relative overflow-hidden glass-panel p-1 transition-all duration-500 hover:border-gold/50 block ${
-                // Make the last item center in the grid if on 3-col layout for symmetry
-                index === VERTICALS.length - 1 ? 'lg:col-start-2' : ''
+                // Let sustainable energy fill the right-side empty space on large screens.
+                vertical.id === 'sustainable-energy' ? 'lg:col-span-2' : ''
               }`}
             >
               {/* Image Background on Hover */}

@@ -46,7 +46,7 @@ export const VERTICALS: Vertical[] = [
   },
   {
     id: 'cafe',
-    title: 'CAFE ELLIOT',
+    title: 'CAFE ELLIOTT',
     description: 'A premium culinary experience blending artisanal coffee culture with futuristic lounge aesthetics.',
     icon: Coffee,
     image: '/images/cafe.jpg'

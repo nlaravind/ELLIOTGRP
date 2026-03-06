@@ -9,9 +9,9 @@ export const Footer: React.FC = () => {
     { id: 'ev', label: 'Elliot EV Business' },
     { id: 'realestate', label: 'Elliot Real Estate' },
     { id: 'blockchain', label: 'Elliott Blockchain' },
-    { id: 'cafe', label: 'Cafe Elliot' },
+    { id: 'cafe', label: 'Cafe Elliott' },
     { id: 'fintech', label: 'Elliot Fintech' },
-    { id: 'aviation', label: 'ElliotAviation' },
+    { id: 'aviation', label: 'Elliot Aviation' },
     { id: 'sustainable-energy', label: 'Elliot Sustainable Energy' },
   ];
 
