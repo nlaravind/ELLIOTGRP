@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { VERTICALS } from '../constants';
 
@@ -15,7 +16,7 @@ const routeMap: { [key: string]: string } = {
 
 export const VerticalsGrid: React.FC = () => {
   return (
-    <section id="sectors" className="py-32 bg-navy relative scroll-mt-20">
+    <section id="sectors" className="sectors-section py-32 bg-navy relative scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-24">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-4 text-sm">Our Ecosystem</h2>
@@ -25,13 +26,20 @@ export const VerticalsGrid: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {VERTICALS.map((vertical, index) => (
-            <Link
+            <motion.div
               key={vertical.id}
-              to={routeMap[vertical.id]}
-              className={`group relative overflow-hidden glass-panel p-1 transition-all duration-500 hover:border-gold/50 block ${
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+              className={`${
                 // Let sustainable energy fill the right-side empty space on large screens.
                 vertical.id === 'sustainable-energy' ? 'lg:col-span-2' : ''
               }`}
+            >
+            <Link
+              to={routeMap[vertical.id]}
+              className="sector-card group relative overflow-hidden glass-panel p-1 transition-all duration-500 hover:border-gold/50 block h-full"
             >
               {/* Image Background on Hover */}
               <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
@@ -62,6 +70,7 @@ export const VerticalsGrid: React.FC = () => {
                 </div>
               </div>
             </Link>
+            </motion.div>
           ))}
         </div>
       </div>
