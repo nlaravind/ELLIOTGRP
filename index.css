@@ -1,1 +1,79 @@
-/* Intentionally present because index.html references /index.css. */
+.sectors-section {
+  position: relative;
+  padding: 120px 8%;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at top,
+    rgba(20, 40, 120, 0.35),
+    rgba(5, 10, 40, 1)
+  );
+}
+
+.background-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  top: -200px;
+  left: -200px;
+  z-index: 1;
+  filter: blur(120px);
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(50, 90, 255, 0.35),
+    rgba(10, 20, 80, 0.2),
+    transparent
+  );
+  animation: glowMove 18s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(200px, 100px) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-150px, 200px) scale(1.1);
+  }
+}
+
+.sector-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.sector-card {
+  position: relative;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sector-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(255, 215, 0, 0.15);
+}
+
+.energy-card {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .energy-card {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-glow {
+    animation: none;
+  }
+}
