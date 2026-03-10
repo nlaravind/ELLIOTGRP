@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -189,11 +190,15 @@ function HomePage() {
         {/* Contact Strip */}
         <section id="contact" className="py-20 bg-navy-light border-y border-navy-lighter scroll-mt-20">
            <div className="container mx-auto px-6 text-center">
-              <h2 className="font-serif text-3xl text-silver mb-8">Ready to engage with a globally competitive enterprise?</h2>
-              <div className="mb-8">
-                <p className="text-gold font-bold tracking-widest uppercase text-sm mb-2">Via Moka</p>
-                <p className="text-silver-dim text-base">
-                  222, Shankarpalli Rd, Janwada, Hyderabad, Telangana 500075
+                <h2 className="font-serif text-3xl text-silver mb-8">Ready to engage with a globally competitive enterprise?</h2>
+                <div className="mb-8">
+                  <div className="inline-flex items-center gap-2 px-5 py-2 mb-4 rounded-full border border-gold/50 bg-navy/50 text-gold uppercase tracking-widest text-xs font-bold">
+                    <MapPin size={14} />
+                    <span>Location</span>
+                  </div>
+                  <p className="text-gold font-bold tracking-widest uppercase text-sm mb-2">Via Moka</p>
+                  <p className="text-silver-dim text-base">
+                    222, Shankarpalli Rd, Janwada, Hyderabad, Telangana 500075
                 </p>
                 <a
                   href="https://maps.app.goo.gl/iEA81kEJowzsyT9T6"
