@@ -1,9 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Zap, TrendingUp, Leaf, Smartphone } from 'lucide-react';
 
 export const EVBusinessPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-navy text-silver font-sans">
+    <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -13,7 +14,7 @@ export const EVBusinessPage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-navy to-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-b from-navy to-navy-light">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
             <Zap size={64} className="text-gold" />
@@ -31,10 +32,10 @@ export const EVBusinessPage: React.FC = () => {
             Explore Models
           </button>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Division */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Division</h2>
           <h3 className="font-serif text-4xl text-silver mb-8 leading-tight">
@@ -55,10 +56,10 @@ export const EVBusinessPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Focus Areas */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Core Focus Areas</h3>
           <div className="grid md:grid-cols-2 gap-12">
@@ -100,10 +101,10 @@ export const EVBusinessPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Elliot EV */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Why Choose Elliot EV</h3>
           <div className="grid md:grid-cols-3 gap-8">
@@ -130,17 +131,18 @@ export const EVBusinessPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="py-20 bg-navy-light border-t border-navy-lighter">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-navy-light border-t border-navy-lighter">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-silver mb-8">Ready to Go Electric?</h2>
           <button className="inline-block px-12 py-4 border border-gold text-gold font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300">
             Inquire Now
           </button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
+

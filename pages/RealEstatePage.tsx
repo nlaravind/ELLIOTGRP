@@ -1,9 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Building2, Globe, Leaf } from 'lucide-react';
 
 export const RealEstatePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-navy text-silver font-sans">
+    <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -13,7 +14,7 @@ export const RealEstatePage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-navy to-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-b from-navy to-navy-light">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
             <Building2 size={64} className="text-gold" />
@@ -31,10 +32,10 @@ export const RealEstatePage: React.FC = () => {
             Explore Projects
           </button>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Division */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Division</h2>
           <h3 className="font-serif text-4xl text-silver mb-8 leading-tight">
@@ -55,10 +56,10 @@ export const RealEstatePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Core Expertise */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Core Expertise</h3>
           <div className="grid md:grid-cols-2 gap-12">
@@ -100,10 +101,10 @@ export const RealEstatePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Initial Focus */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Our Focus Markets</h3>
           <div className="grid md:grid-cols-3 gap-8">
@@ -124,10 +125,10 @@ export const RealEstatePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Investor Section */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">For Investors</h3>
           <div className="grid md:grid-cols-3 gap-8">
@@ -145,17 +146,18 @@ export const RealEstatePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="py-20 bg-gold">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gold">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-navy mb-8">Invest in Excellence</h2>
           <button className="inline-block px-12 py-4 border border-navy text-navy font-bold uppercase tracking-[0.2em] hover:bg-navy hover:text-gold transition-all duration-300">
             Investment Inquiry
           </button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
+

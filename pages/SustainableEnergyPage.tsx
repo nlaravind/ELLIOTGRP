@@ -1,9 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Sun, Wind, BatteryCharging, Zap, Leaf, TrendingUp, Network } from 'lucide-react';
 
 export const SustainableEnergyPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-navy text-silver font-sans">
+    <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -13,7 +14,7 @@ export const SustainableEnergyPage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-b from-navy via-navy to-navy-light relative overflow-hidden">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-32 bg-gradient-to-b from-navy via-navy to-navy-light relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
@@ -43,10 +44,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Elliot Sustainable Energy */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-4 text-sm">About Division</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-8 leading-tight">
@@ -80,10 +81,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Core Energy Solutions */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gold font-bold tracking-widest uppercase mb-4 text-sm">Our Solutions</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-16 text-center">
@@ -152,10 +153,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Strategic Focus Areas */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gold font-bold tracking-widest uppercase mb-4 text-sm">Markets</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-16 text-center">
@@ -206,10 +207,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Sustainability Impact */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gold font-bold tracking-widest uppercase mb-4 text-sm">Impact</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-16 text-center">
@@ -242,10 +243,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Integration with Elliot Group */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gold font-bold tracking-widest uppercase mb-4 text-sm">The Complete Ecosystem</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-4 text-center">
@@ -292,10 +293,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-500 to-blue-500">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-r from-green-500 to-blue-500">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-navy font-bold mb-4">Ready to Power the Future?</h2>
           <p className="text-navy-light text-lg mb-8 max-w-2xl mx-auto">
@@ -315,9 +316,10 @@ export const SustainableEnergyPage: React.FC = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
 
 export default SustainableEnergyPage;
+

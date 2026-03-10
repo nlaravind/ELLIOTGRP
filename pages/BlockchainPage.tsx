@@ -1,9 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, Link as LinkIcon, Shield, Network } from 'lucide-react';
 
 export const BlockchainPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-navy text-silver font-sans">
+    <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -13,7 +14,7 @@ export const BlockchainPage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-navy to-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-b from-navy to-navy-light">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
             <LinkIcon size={64} className="text-gold" />
@@ -31,10 +32,10 @@ export const BlockchainPage: React.FC = () => {
             Explore Solutions
           </button>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Division */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Division</h2>
           <h3 className="font-serif text-4xl text-silver mb-8 leading-tight">
@@ -44,10 +45,10 @@ export const BlockchainPage: React.FC = () => {
             elliott blockchain develops secure, scalable, and interoperable distributed ledger solutions designed for enterprises, governments, and fintech companies. Our focus extends to bridging the digital gap in developing nations.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Objectives */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Our Objectives</h3>
           <div className="grid md:grid-cols-3 gap-8">
@@ -68,10 +69,10 @@ export const BlockchainPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Applications */}
-      <section className="py-24 bg-navy">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Key Applications</h3>
           <div className="grid md:grid-cols-2 gap-12">
@@ -113,10 +114,10 @@ export const BlockchainPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Stack */}
-      <section className="py-24 bg-navy-light">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Our Technology</h3>
           <div className="max-w-3xl mx-auto">
@@ -136,17 +137,18 @@ export const BlockchainPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="py-20 bg-gold">
+      <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gold">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-navy mb-8">Transform Your Business</h2>
           <button className="inline-block px-12 py-4 border border-navy text-navy font-bold uppercase tracking-[0.2em] hover:bg-navy hover:text-gold transition-all duration-300">
             Request Demo
           </button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
+
