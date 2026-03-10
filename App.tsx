@@ -190,6 +190,20 @@ function HomePage() {
         <section id="contact" className="py-20 bg-navy-light border-y border-navy-lighter scroll-mt-20">
            <div className="container mx-auto px-6 text-center">
               <h2 className="font-serif text-3xl text-silver mb-8">Ready to engage with a globally competitive enterprise?</h2>
+              <div className="mb-8">
+                <p className="text-gold font-bold tracking-widest uppercase text-sm mb-2">Via Moka</p>
+                <p className="text-silver-dim text-base">
+                  222, Shankarpalli Rd, Janwada, Hyderabad, Telangana 500075
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/iEA81kEJowzsyT9T6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-gold hover:text-silver transition-colors text-sm uppercase tracking-widest"
+                >
+                  View on Google Maps
+                </a>
+              </div>
               <a href="mailto:contact@elliotgroup.com" className="inline-block px-12 py-4 border border-gold text-gold font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300 text-sm">
                 Investor Relations
               </a>
