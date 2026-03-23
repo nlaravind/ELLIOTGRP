@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Building2, Globe, Leaf } from 'lucide-react';
+import { ScrollProgress } from '../components/ScrollProgress';
 
 export const RealEstatePage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
+      <ScrollProgress />
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -20,7 +22,7 @@ export const RealEstatePage: React.FC = () => {
             <Building2 size={64} className="text-gold" />
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            Elliot Infra
+            Elliot Real Estate
           </h1>
           <h2 className="text-gold tracking-[0.3em] text-lg md:text-xl font-bold mb-6 uppercase">
             Building Landmarks. Creating Legacy.
@@ -62,42 +64,26 @@ export const RealEstatePage: React.FC = () => {
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Core Expertise</h3>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Globe className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">End-to-End Execution</h4>
-                <p className="text-silver-dim">From conceptualization to delivery, we manage every aspect of project development.</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Globe className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">End-to-End Execution</h4>
+              <p className="text-silver-dim">From conceptualization to delivery, we manage every aspect of project development.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Leaf className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Sustainable Development</h4>
-                <p className="text-silver-dim">Eco-friendly designs with renewable energy and green building practices.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Leaf className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Sustainable Development</h4>
+              <p className="text-silver-dim">Eco-friendly designs with renewable energy and green building practices.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Building2 className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Smart Green Buildings</h4>
-                <p className="text-silver-dim">IoT-enabled infrastructure for energy efficiency and resident comfort.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Building2 className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Smart Green Buildings</h4>
+              <p className="text-silver-dim">IoT-enabled infrastructure for energy efficiency and resident comfort.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Globe className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Global Standards</h4>
-                <p className="text-silver-dim">World-class construction and design meeting international benchmarks.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Globe className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Global Standards</h4>
+              <p className="text-silver-dim">World-class construction and design meeting international benchmarks.</p>
             </div>
           </div>
         </div>

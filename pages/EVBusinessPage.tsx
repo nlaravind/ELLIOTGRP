@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Zap, TrendingUp, Leaf, Smartphone } from 'lucide-react';
+import { ScrollProgress } from '../components/ScrollProgress';
 
 export const EVBusinessPage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
+      <ScrollProgress />
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
@@ -62,42 +64,26 @@ export const EVBusinessPage: React.FC = () => {
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Core Focus Areas</h3>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Leaf className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Clean Mobility Innovation</h4>
-                <p className="text-silver-dim">Developing cutting-edge electric vehicle technology that sets industry standards.</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Leaf className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Clean Mobility Innovation</h4>
+              <p className="text-silver-dim">Developing cutting-edge electric vehicle technology that sets industry standards.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <TrendingUp className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Battery Technology</h4>
-                <p className="text-silver-dim">Next-generation battery systems for extended range and faster charging.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <TrendingUp className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Battery Technology</h4>
+              <p className="text-silver-dim">Next-generation battery systems for extended range and faster charging.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Smartphone className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Smart EV Dashboard</h4>
-                <p className="text-silver-dim">Intuitive in-vehicle systems for navigation, diagnostics, and energy management.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Smartphone className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Smart EV Dashboard</h4>
+              <p className="text-silver-dim">Intuitive in-vehicle systems for navigation, diagnostics, and energy management.</p>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Zap className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Charging Infrastructure</h4>
-                <p className="text-silver-dim">Building comprehensive charging networks across cities and highways.</p>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Zap className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Charging Infrastructure</h4>
+              <p className="text-silver-dim">Building comprehensive charging networks across cities and highways.</p>
             </div>
           </div>
         </div>

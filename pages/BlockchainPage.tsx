@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Link as LinkIcon, Shield, Network } from 'lucide-react';
+import { ScrollProgress } from '../components/ScrollProgress';
 
 export const BlockchainPage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
+      <ScrollProgress />
       {/* Back Button */}
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">

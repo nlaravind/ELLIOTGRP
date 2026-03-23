@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Zap, Lock, Globe } from 'lucide-react';
+import { ArrowLeft, Globe, Lock, Zap } from 'lucide-react';
+import { ScrollProgress } from '../components/ScrollProgress';
 
 export const CryptoPage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
-      {/* Back Button */}
+      <ScrollProgress />
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
           <ArrowLeft size={20} />
@@ -13,7 +14,6 @@ export const CryptoPage: React.FC = () => {
         </a>
       </div>
 
-      {/* Hero Section */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-b from-navy to-navy-light">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
@@ -42,7 +42,6 @@ export const CryptoPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* About Division */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Division</h2>
@@ -69,72 +68,54 @@ export const CryptoPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* Core Pillars */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Core Pillars</h3>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Lock className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Digital Asset Management</h4>
-                <p className="text-silver-dim mb-4">Institutional custody, risk management, and portfolio structuring services.</p>
-                <ul className="text-silver-dim text-sm space-y-1">
-                  <li>• Secure multi-signature custody</li>
-                  <li>• Professional asset allocation</li>
-                  <li>• Institutional reporting</li>
-                </ul>
-              </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Lock className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Digital Asset Management</h4>
+              <p className="text-silver-dim mb-4">Institutional custody, risk management, and portfolio structuring services.</p>
+              <ul className="text-silver-dim text-sm space-y-1">
+                <li>Secure multi-signature custody</li>
+                <li>Professional asset allocation</li>
+                <li>Institutional reporting</li>
+              </ul>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Zap className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Token Ecosystem</h4>
-                <p className="text-silver-dim mb-4">Native utility tokens with governance and staking mechanisms.</p>
-                <ul className="text-silver-dim text-sm space-y-1">
-                  <li>• Utility token models</li>
-                  <li>• DAO governance framework</li>
-                  <li>• Staking & yield protocols</li>
-                </ul>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Zap className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Token Ecosystem</h4>
+              <p className="text-silver-dim mb-4">Native utility tokens with governance and staking mechanisms.</p>
+              <ul className="text-silver-dim text-sm space-y-1">
+                <li>Utility token models</li>
+                <li>DAO governance framework</li>
+                <li>Staking & yield protocols</li>
+              </ul>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Globe className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Crypto Infrastructure</h4>
-                <p className="text-silver-dim mb-4">Secure wallets, exchange integrations, and payment gateways.</p>
-                <ul className="text-silver-dim text-sm space-y-1">
-                  <li>• Hardware-grade security</li>
-                  <li>• Multi-chain compatibility</li>
-                  <li>• DEX & CEX integrations</li>
-                </ul>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Globe className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Crypto Infrastructure</h4>
+              <p className="text-silver-dim mb-4">Secure wallets, exchange integrations, and payment gateways.</p>
+              <ul className="text-silver-dim text-sm space-y-1">
+                <li>Hardware-grade security</li>
+                <li>Multi-chain compatibility</li>
+                <li>DEX & CEX integrations</li>
+              </ul>
             </div>
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <Lock className="w-12 h-12 text-gold" />
-              </div>
-              <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Compliance & Security</h4>
-                <p className="text-silver-dim mb-4">Institutional-grade frameworks and continuous security audits.</p>
-                <ul className="text-silver-dim text-sm space-y-1">
-                  <li>• AML/KYC compliance</li>
-                  <li>• Smart contract audits</li>
-                  <li>• Transparent governance</li>
-                </ul>
-              </div>
+            <div className="bg-navy p-8 rounded-2xl border border-navy-lighter">
+              <Lock className="w-12 h-12 text-gold mb-5" />
+              <h4 className="font-bold text-silver text-xl mb-3">Compliance & Security</h4>
+              <p className="text-silver-dim mb-4">Institutional-grade frameworks and continuous security audits.</p>
+              <ul className="text-silver-dim text-sm space-y-1">
+                <li>AML/KYC compliance</li>
+                <li>Smart contract audits</li>
+                <li>Transparent governance</li>
+              </ul>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Products & Services */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Products & Services</h3>
@@ -163,7 +144,6 @@ export const CryptoPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* Strategic Vision */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Strategic Vision</h3>
@@ -201,7 +181,6 @@ export const CryptoPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* CTA */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gold">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-navy mb-8">Ready to Enter Web3?</h2>
@@ -213,4 +192,3 @@ export const CryptoPage: React.FC = () => {
     </div>
   );
 };
-

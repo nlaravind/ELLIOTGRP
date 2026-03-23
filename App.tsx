@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ArrowRight, Gem, Globe2, MapPin, Sparkles, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollProgress } from './components/ScrollProgress';
 import { Navbar } from './components/Navbar';
 import { VerticalsGrid } from './components/VerticalsGrid';
 import { Footer } from './components/Footer';
@@ -50,6 +51,7 @@ const PageLoader: React.FC = () => (
 function HomePage() {
   return (
     <div className="min-h-screen bg-navy text-silver font-sans selection:bg-gold selection:text-navy">
+      <ScrollProgress />
       <Navbar />
       <main>
         <section className="pt-32 pb-24 bg-gradient-to-b from-navy via-navy to-navy-light relative overflow-hidden">

@@ -20,7 +20,8 @@ import {
   Users,
   Workflow,
 } from 'lucide-react';
-import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
+import { ScrollProgress } from '../components/ScrollProgress';
 
 const highlightCards = [
   { label: 'Duration', value: '8-12 Weeks', icon: Clock },
@@ -173,12 +174,6 @@ const CountUp: React.FC<{ value: number; suffix?: string }> = ({ value, suffix =
 };
 
 export const AcademyPage: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 30,
-    restDelta: 0.001,
-  });
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [faqSectionOpen, setFaqSectionOpen] = useState(false);
 
@@ -186,10 +181,7 @@ export const AcademyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-navy text-silver font-sans overflow-x-hidden">
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-silver to-gold origin-left z-[60]"
-        style={{ scaleX }}
-      />
+      <ScrollProgress />
 
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
