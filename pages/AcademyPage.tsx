@@ -7,13 +7,18 @@ import {
   ChevronDown,
   Clock,
   Cpu,
+  Coins,
+  FileCode2,
   FileBadge,
   GraduationCap,
   Link2,
   Network,
+  Shield,
   ShieldCheck,
   Sparkles,
+  TrendingUp,
   Users,
+  Workflow,
 } from 'lucide-react';
 import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 
@@ -25,19 +30,19 @@ const highlightCards = [
 ];
 
 const coreTopics = [
-  'Blockchain Fundamentals',
-  'Cryptocurrency & Digital Assets',
-  'Smart Contracts',
-  'Web3 & dApps',
-  'Blockchain Security',
-  'Real-world Use Cases',
+  { label: 'Blockchain Fundamentals', icon: Network },
+  { label: 'Cryptocurrency & Digital Assets', icon: Coins },
+  { label: 'Smart Contracts', icon: FileCode2 },
+  { label: 'Web3 & dApps', icon: Workflow },
+  { label: 'Blockchain Security', icon: Shield },
+  { label: 'Real-world Use Cases', icon: Briefcase },
 ];
 
 const aiTopics = [
-  'AI for Data Analysis',
-  'Automation in Smart Contracts',
-  'Fraud Detection',
-  'Predictive Analytics',
+  { label: 'AI for Data Analysis', icon: Brain },
+  { label: 'Automation in Smart Contracts', icon: Cpu },
+  { label: 'Fraud Detection', icon: ShieldCheck },
+  { label: 'Predictive Analytics', icon: TrendingUp },
 ];
 
 const curriculumWeeks = [
@@ -354,7 +359,7 @@ export const AcademyPage: React.FC = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {coreTopics.map((topic) => (
                 <motion.div
-                  key={topic}
+                  key={topic.label}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -362,8 +367,8 @@ export const AcademyPage: React.FC = () => {
                   whileHover={{ y: -4, borderColor: 'rgba(212,175,55,0.5)' }}
                   className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
                 >
-                  <Link2 className="w-10 h-10 text-gold mb-4" />
-                  <p className="text-silver font-medium">{topic}</p>
+                  <topic.icon className="w-10 h-10 text-gold mb-4" />
+                  <p className="text-silver font-medium">{topic.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -374,7 +379,7 @@ export const AcademyPage: React.FC = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
               {aiTopics.map((topic) => (
                 <motion.div
-                  key={topic}
+                  key={topic.label}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -382,8 +387,8 @@ export const AcademyPage: React.FC = () => {
                   whileHover={{ y: -4, borderColor: 'rgba(212,175,55,0.5)' }}
                   className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
                 >
-                  <Brain className="w-10 h-10 text-gold mb-4" />
-                  <p className="text-silver font-medium">{topic}</p>
+                  <topic.icon className="w-10 h-10 text-gold mb-4" />
+                  <p className="text-silver font-medium">{topic.label}</p>
                 </motion.div>
               ))}
             </div>
