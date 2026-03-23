@@ -4,6 +4,7 @@ import {
   BookOpen,
   Brain,
   Briefcase,
+  ChevronDown,
   Clock,
   Cpu,
   FileBadge,
@@ -56,6 +57,68 @@ const skillStats = [
   { label: 'Smart Contract Skills', value: 8, suffix: '+' },
   { label: 'Security Awareness', value: 24, suffix: '/7' },
   { label: 'Industry Readiness', value: 12, suffix: ' Weeks' },
+];
+
+const faqs = [
+  {
+    question: 'What is the duration of the Blockchain Certification Programme?',
+    answer:
+      'The program duration is 8 to 12 weeks, with structured training designed to build practical blockchain skills within a short time frame.',
+  },
+  {
+    question: 'How many hours per week is the training?',
+    answer:
+      'The program requires 6 hours per week, making it suitable for students and working professionals.',
+  },
+  {
+    question: 'Are there different batch timings available?',
+    answer: 'Yes. We offer morning batch and evening batch options for flexible scheduling.',
+  },
+  {
+    question: 'Who can join this program?',
+    answer:
+      'This program is suitable for students, graduates, working professionals, entrepreneurs, and beginners interested in blockchain. No prior coding experience is required.',
+  },
+  {
+    question: 'What topics will be covered in the training?',
+    answer:
+      'The program covers blockchain fundamentals, cryptocurrency and digital assets, smart contracts, Web3 and decentralized applications, blockchain security, real-world blockchain use cases, and AI as a supporting tool within blockchain applications.',
+  },
+  {
+    question: 'Will I receive a certificate after completing the program?',
+    answer:
+      'Yes. Participants who successfully complete the program will receive a Professional Certificate in Blockchain Technology issued by ELLIOT Academy.',
+  },
+  {
+    question: 'Is this program suitable for beginners?',
+    answer:
+      'Yes. The program is designed to start from the basics and gradually build advanced understanding through practical training and case studies.',
+  },
+  {
+    question: 'What is the minimum batch size?',
+    answer:
+      'The first batch will have a minimum of 100 students. Seats are limited and allocated on a first-come, first-served basis.',
+  },
+  {
+    question: 'Is the training conducted online or offline?',
+    answer:
+      'The program will be conducted in online mode through instructor-led sessions. Future batches may include classroom training options.',
+  },
+  {
+    question: 'What skills will I gain after completing this program?',
+    answer:
+      'Participants will gain blockchain knowledge, smart contract understanding, Web3 fundamentals, security awareness, and practical industry skills.',
+  },
+  {
+    question: 'Will this program help with career opportunities?',
+    answer:
+      'Yes. The program is designed to build practical skills that can support opportunities in blockchain technology, Web3 ecosystems, fintech and digital platforms, and technology startups.',
+  },
+  {
+    question: 'How can I register for the program?',
+    answer:
+      'You can register by filling the online application form, contacting the academy directly, and paying the registration fee to confirm your seat.',
+  },
 ];
 
 const fadeUp = {
@@ -111,6 +174,7 @@ export const AcademyPage: React.FC = () => {
     damping: 30,
     restDelta: 0.001,
   });
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const aimText = 'To create skilled professionals ready for the future of blockchain technology.';
 
@@ -455,6 +519,66 @@ export const AcademyPage: React.FC = () => {
               ))}
             </h3>
           </div>
+        </div>
+      </section>
+
+      {divider}
+
+      <section className="py-20 bg-navy-light">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <p className="text-gold text-xs uppercase tracking-[0.22em] mb-4">Frequently Asked Questions</p>
+              <h3 className="font-serif text-4xl text-silver">ELLIOT Academy Blockchain Certification Programme</h3>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+
+                return (
+                  <div
+                    key={faq.question}
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                    >
+                      <span className="text-silver font-medium">{faq.question}</span>
+                      <motion.span
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-gold shrink-0"
+                      >
+                        <ChevronDown size={20} />
+                      </motion.span>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? 'auto' : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-5 pt-0 text-silver-dim leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </section>
 
