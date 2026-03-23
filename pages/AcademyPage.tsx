@@ -175,7 +175,7 @@ export const AcademyPage: React.FC = () => {
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <a
-              href="mailto:contact@elliotgroup.com"
+              href="/#contact"
               className="inline-block px-8 py-4 bg-gold text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.18)] hover:shadow-[0_0_35px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 transition-all duration-200"
             >
               Apply Now
@@ -237,11 +237,6 @@ export const AcademyPage: React.FC = () => {
               <p className="text-silver-dim text-lg leading-relaxed mb-5">
                 The academy prepares individuals to move from beginner level to industry-ready professionals through structured training, real-world case studies, and hands-on learning.
               </p>
-              <div className="rounded-xl border border-gold/30 bg-gold/10 p-5">
-                <p className="text-silver-dim">
-                  AI is used only as a supporting tool within blockchain systems.
-                </p>
-              </div>
             </motion.div>
 
             <motion.div
@@ -326,11 +321,6 @@ export const AcademyPage: React.FC = () => {
                   <p className="text-silver font-medium">{topic}</p>
                 </motion.div>
               ))}
-            </div>
-            <div className="rounded-xl border border-gold/30 bg-gold/10 p-5 max-w-2xl">
-              <p className="text-silver-dim text-sm">
-                AI is used as a supporting technology within blockchain systems.
-              </p>
             </div>
           </div>
         </div>
@@ -485,19 +475,19 @@ export const AcademyPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="mailto:contact@elliotgroup.com"
+                href="/#contact"
                 className="inline-block px-8 py-4 bg-navy text-gold font-bold uppercase tracking-[0.16em] text-sm rounded-xl shadow-[0_0_25px_rgba(10,20,40,0.2)] hover:shadow-[0_0_35px_rgba(10,20,40,0.35)] hover:-translate-y-0.5 transition-all duration-200"
               >
                 Apply Now
               </a>
               <a
-                href="mailto:contact@elliotgroup.com"
+                href="/#contact"
                 className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl hover:bg-navy/10 hover:shadow-[0_0_25px_rgba(10,20,40,0.18)] transition-all duration-200"
               >
                 Register
               </a>
               <a
-                href="mailto:contact@elliotgroup.com"
+                href="/#contact"
                 className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl hover:bg-navy/10 hover:shadow-[0_0_25px_rgba(10,20,40,0.18)] transition-all duration-200"
               >
                 Contact Us
