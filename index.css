@@ -69,6 +69,9 @@
 .sectors-page {
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(5, 11, 46, 1) 0%, rgba(10, 20, 69, 1) 52%, rgba(5, 11, 46, 1) 100%);
 }
 
 .sectors-page::before {
@@ -95,6 +98,49 @@
   z-index: 1;
 }
 
+.sectors-page section {
+  position: relative;
+}
+
+.sectors-page section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 1120px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+}
+
+.sectors-page section:first-of-type {
+  overflow: hidden;
+}
+
+.sectors-page section:first-of-type::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(212, 175, 55, 0.14), transparent 26%),
+    radial-gradient(circle at 80% 25%, rgba(212, 175, 55, 0.1), transparent 24%);
+}
+
+.sectors-page .container > h2,
+.sectors-page .container > h3 {
+  letter-spacing: 0.01em;
+}
+
+.sectors-page .bg-navy-light.border,
+.sectors-page .bg-navy.border,
+.sectors-page [class*='bg-navy-light'].border,
+.sectors-page [class*='bg-navy '].border {
+  background: rgba(10, 20, 69, 0.58);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
 .sectors-page .rounded-lg.border {
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
@@ -105,6 +151,72 @@
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.55),
     0 0 20px rgba(255, 215, 0, 0.12);
+}
+
+.sectors-page .rounded-xl.border,
+.sectors-page .rounded-2xl.border,
+.sectors-page [class*='rounded-['].border {
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.sectors-page .rounded-xl.border:hover,
+.sectors-page .rounded-2xl.border:hover,
+.sectors-page [class*='rounded-['].border:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.4),
+    0 0 24px rgba(255, 215, 0, 0.12);
+}
+
+.sectors-page button,
+.sectors-page a[class*='px-'] {
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sectors-page button:hover,
+.sectors-page a[class*='px-']:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.26),
+    0 0 24px rgba(212, 175, 55, 0.12);
+}
+
+.sectors-page .text-center > div > svg,
+.sectors-page .text-center svg.text-gold,
+.sectors-page .text-center svg.text-green-400,
+.sectors-page .text-center svg.text-blue-300 {
+  filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.18));
+}
+
+.sectors-page .font-serif.text-5xl,
+.sectors-page .font-serif.text-4xl,
+.sectors-page .font-serif.text-3xl {
+  text-wrap: balance;
+}
+
+.sectors-page .flex.gap-6,
+.sectors-page .space-y-6 > div,
+.sectors-page .grid > .text-center {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sectors-page .flex.gap-6:hover,
+.sectors-page .space-y-6 > div:hover,
+.sectors-page .grid > .text-center:hover {
+  transform: translateY(-4px);
+}
+
+.sectors-page ul li,
+.sectors-page p {
+  text-wrap: pretty;
 }
 
 @media (max-width: 1024px) {
