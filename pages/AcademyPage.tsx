@@ -175,6 +175,7 @@ export const AcademyPage: React.FC = () => {
     restDelta: 0.001,
   });
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [faqSectionOpen, setFaqSectionOpen] = useState(false);
 
   const aimText = 'To create skilled professionals ready for the future of blockchain technology.';
 
@@ -533,50 +534,75 @@ export const AcademyPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="text-center mb-12">
-              <p className="text-gold text-xs uppercase tracking-[0.22em] mb-4">Frequently Asked Questions</p>
-              <h3 className="font-serif text-4xl text-silver">ELLIOT Academy Blockchain Certification Programme</h3>
-            </div>
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+              <button
+                type="button"
+                onClick={() => setFaqSectionOpen((prev) => !prev)}
+                className="w-full px-8 py-6 text-left flex items-center justify-between gap-4"
+              >
+                <div>
+                  <p className="text-gold text-xs uppercase tracking-[0.22em] mb-3">Frequently Asked Questions</p>
+                  <h3 className="font-serif text-3xl text-silver">ELLIOT Academy Blockchain Certification Programme</h3>
+                </div>
+                <motion.span
+                  animate={{ rotate: faqSectionOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-gold shrink-0"
+                >
+                  <ChevronDown size={24} />
+                </motion.span>
+              </button>
 
-            <div className="space-y-4">
-              {faqs.map((faq, index) => {
-                const isOpen = openFaq === index;
+              <motion.div
+                initial={false}
+                animate={{
+                  height: faqSectionOpen ? 'auto' : 0,
+                  opacity: faqSectionOpen ? 1 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 pb-6 space-y-4">
+                  {faqs.map((faq, index) => {
+                    const isOpen = openFaq === index;
 
-                return (
-                  <div
-                    key={faq.question}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
-                    >
-                      <span className="text-silver font-medium">{faq.question}</span>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="text-gold shrink-0"
+                    return (
+                      <div
+                        key={faq.question}
+                        className="bg-navy/60 border border-white/10 rounded-2xl overflow-hidden"
                       >
-                        <ChevronDown size={20} />
-                      </motion.span>
-                    </button>
-                    <motion.div
-                      initial={false}
-                      animate={{
-                        height: isOpen ? 'auto' : 0,
-                        opacity: isOpen ? 1 : 0,
-                      }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 pt-0 text-silver-dim leading-relaxed">
-                        {faq.answer}
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaq(isOpen ? null : index)}
+                          className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                        >
+                          <span className="text-silver font-medium">{faq.question}</span>
+                          <motion.span
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-gold shrink-0"
+                          >
+                            <ChevronDown size={20} />
+                          </motion.span>
+                        </button>
+                        <motion.div
+                          initial={false}
+                          animate={{
+                            height: isOpen ? 'auto' : 0,
+                            opacity: isOpen ? 1 : 0,
+                          }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-5 pt-0 text-silver-dim leading-relaxed">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
                       </div>
-                    </motion.div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
