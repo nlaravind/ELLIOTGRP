@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var redirectPath = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem('spa-redirect-path', redirectPath);
+        window.location.replace('/');
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #050b2e;
+        color: #e6e8f0;
+        font-family: Montserrat, Arial, sans-serif;
+      }
+      p {
+        opacity: 0.8;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Redirecting to Elliot Group...</p>
+  </body>
+</html>
