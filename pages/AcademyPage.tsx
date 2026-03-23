@@ -1,19 +1,126 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ArrowLeft,
+  BookOpen,
   Brain,
+  Briefcase,
   Clock,
+  Cpu,
+  FileBadge,
   GraduationCap,
   Link2,
+  Network,
   ShieldCheck,
+  Sparkles,
   Users,
-  BookOpen,
-  Briefcase,
 } from 'lucide-react';
+import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
+
+const highlightCards = [
+  { label: 'Duration', value: '8-12 Weeks', icon: Clock },
+  { label: 'Weekly Time', value: '6 Hours', icon: BookOpen },
+  { label: 'Batch Options', value: 'Morning & Evening', icon: Users },
+  { label: 'First Batch', value: '100 Students', icon: GraduationCap },
+];
+
+const coreTopics = [
+  'Blockchain Fundamentals',
+  'Cryptocurrency & Digital Assets',
+  'Smart Contracts',
+  'Web3 & dApps',
+  'Blockchain Security',
+  'Real-world Use Cases',
+];
+
+const aiTopics = [
+  'AI for Data Analysis',
+  'Automation in Smart Contracts',
+  'Fraud Detection',
+  'Predictive Analytics',
+];
+
+const curriculumWeeks = [
+  'Week 1 - Blockchain Basics',
+  'Week 2 - Cryptocurrency',
+  'Week 3 - Blockchain Architecture',
+  'Week 4 - Smart Contracts',
+  'Week 5 - Web3 Applications',
+  'Week 6 - Security',
+  'Week 7 - Industry Use Cases',
+  'Week 8 - AI in Blockchain',
+  'Week 9-12 - Project & Certification',
+];
+
+const skillStats = [
+  { label: 'Blockchain Knowledge', value: 100, suffix: '%' },
+  { label: 'Smart Contract Skills', value: 8, suffix: '+' },
+  { label: 'Security Awareness', value: 24, suffix: '/7' },
+  { label: 'Industry Readiness', value: 12, suffix: ' Weeks' },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const divider = (
+  <div className="container mx-auto px-6">
+    <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+  </div>
+);
+
+const CountUp: React.FC<{ value: number; suffix?: string }> = ({ value, suffix = '' }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const motionValue = useMotionValue(0);
+  const rounded = useTransform(motionValue, (latest) => Math.round(latest));
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on('change', (latest) => setDisplay(latest));
+    return () => unsubscribe();
+  }, [rounded]);
+
+  useEffect(() => {
+    if (inView) {
+      motionValue.set(value);
+    }
+  }, [inView, motionValue, value]);
+
+  return (
+    <div ref={ref} className="text-4xl font-serif text-gold">
+      {display}
+      {suffix}
+    </div>
+  );
+};
 
 export const AcademyPage: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const aimText = 'To create skilled professionals ready for the future of blockchain technology.';
+
   return (
-    <div className="min-h-screen bg-navy text-silver font-sans">
+    <div className="min-h-screen bg-navy text-silver font-sans overflow-x-hidden">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-silver to-gold origin-left z-[60]"
+        style={{ scaleX }}
+      />
+
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
           <ArrowLeft size={20} />
@@ -21,232 +128,382 @@ export const AcademyPage: React.FC = () => {
         </a>
       </div>
 
-      <section className="py-20 bg-gradient-to-b from-navy to-navy-light">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex justify-center mb-6">
-            <GraduationCap size={64} className="text-gold" />
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            ELLIOT ACADEMY
-          </h1>
-          <h2 className="text-gold tracking-[0.24em] text-base md:text-xl font-bold mb-8 uppercase">
-            Blockchain Skills for the Future Digital World
-          </h2>
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div className="bg-navy/70 border border-navy-lighter rounded-lg p-5">
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Duration</p>
-              <p className="text-silver font-bold">8-12 Weeks</p>
-            </div>
-            <div className="bg-navy/70 border border-navy-lighter rounded-lg p-5">
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Weekly Time</p>
-              <p className="text-silver font-bold">6 Hours</p>
-            </div>
-            <div className="bg-navy/70 border border-navy-lighter rounded-lg p-5">
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Mode</p>
-              <p className="text-silver font-bold">Online</p>
-            </div>
-            <div className="bg-navy/70 border border-navy-lighter rounded-lg p-5">
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Batch</p>
-              <p className="text-silver font-bold">Morning & Evening</p>
-            </div>
-            <div className="bg-navy/70 border border-navy-lighter rounded-lg p-5 col-span-2 md:col-span-1">
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">First Batch</p>
-              <p className="text-silver font-bold">Min 100 Students</p>
-            </div>
-          </div>
+      <section className="py-20 md:py-24 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.22),_transparent_32%),linear-gradient(180deg,#0a1428_0%,#0d1c37_55%,#09111f_100%)] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-40 h-40 rounded-full border border-gold/20" />
+          <div className="absolute top-32 right-20 w-72 h-72 rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-48 bg-gold/5 blur-3xl" />
         </div>
+
+        <motion.div
+          className="container mx-auto px-6 text-center relative z-10"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
+            <div className="flex justify-center mb-6">
+              <div className="p-5 rounded-full bg-navy/70 border border-gold/30 shadow-[0_0_35px_rgba(212,175,55,0.16)]">
+                <GraduationCap size={58} className="text-gold" />
+              </div>
+            </div>
+          </motion.div>
+          <motion.h1
+            variants={fadeUp}
+            transition={{ duration: 0.6 }}
+            className="font-serif text-5xl md:text-7xl font-bold mb-5 text-silver"
+          >
+            ELLIOT ACADEMY
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-gold tracking-[0.22em] text-sm md:text-lg font-bold uppercase mb-5"
+          >
+            Blockchain Certification Programme
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-silver-dim text-xl md:text-2xl max-w-3xl mx-auto mb-10"
+          >
+            Become Industry-Ready in 8-12 Weeks
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <a
+              href="mailto:contact@elliotgroup.com"
+              className="inline-block px-8 py-4 bg-gold text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.18)] hover:shadow-[0_0_35px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Apply Now
+            </a>
+            <a
+              href="mailto:contact@elliotgroup.com"
+              className="inline-block px-8 py-4 border border-gold/50 text-gold font-bold uppercase tracking-[0.16em] text-sm rounded-xl hover:bg-gold/10 hover:shadow-[0_0_30px_rgba(212,175,55,0.12)] transition-all duration-200"
+            >
+              Download Curriculum
+            </a>
+          </motion.div>
+        </motion.div>
       </section>
+
+      {divider}
 
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
-            <div className="bg-navy-light rounded-2xl border border-navy-lighter p-8">
-              <h2 className="text-gold font-bold tracking-widest uppercase mb-5 text-sm">About ELLIOT Academy</h2>
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
+            {highlightCards.map((card) => (
+              <motion.div
+                key={card.label}
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-7 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:border-gold/40 hover:-translate-y-1 transition-all duration-300"
+              >
+                <card.icon className="w-10 h-10 text-gold mb-4" />
+                <p className="text-gold text-xs uppercase tracking-[0.22em] mb-2">{card.label}</p>
+                <p className="text-silver text-xl font-semibold">{card.value}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {divider}
+
+      <section className="py-20 bg-navy-light">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8"
+            >
+              <p className="text-gold text-xs uppercase tracking-[0.24em] mb-4">About ELLIOT Academy</p>
+              <h2 className="font-serif text-4xl text-silver mb-5">Blockchain Skills, Structured for Careers</h2>
               <p className="text-silver-dim text-lg leading-relaxed mb-5">
-                ELLIOT Academy is the training and education division of ELLIOT Group, focused on developing practical skills in Blockchain technology for the future digital economy.
+                ELLIOT Academy is the education and training division of ELLIOT Group, focused on building practical blockchain skills for the future digital economy.
               </p>
               <p className="text-silver-dim text-lg leading-relaxed mb-5">
                 The academy prepares individuals to move from beginner level to industry-ready professionals through structured training, real-world case studies, and hands-on learning.
               </p>
-              <p className="text-silver-dim text-lg leading-relaxed">
-                Artificial Intelligence is introduced only as a supporting tool within Blockchain applications, such as automation, analytics, and smart contract optimization.
-              </p>
-            </div>
+              <div className="rounded-xl border border-gold/30 bg-gold/10 p-5">
+                <p className="text-silver-dim">
+                  AI is used only as a supporting tool within blockchain systems.
+                </p>
+              </div>
+            </motion.div>
 
-            <div className="bg-gold/10 rounded-2xl border border-gold/30 p-8">
-              <p className="text-gold font-bold tracking-widest uppercase text-xs mb-4">Short Version</p>
-              <h3 className="font-serif text-2xl text-silver mb-4">ELLIOT Academy</h3>
-              <p className="text-silver-dim leading-relaxed">
-                An 8-12 week Blockchain Certification Programme designed to build practical skills and prepare learners for real-world blockchain careers, with AI used as a supporting technology within blockchain systems.
-              </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="absolute -inset-3 bg-gold/10 blur-2xl rounded-[2rem]" />
+              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+                <img src="/images/academy.jpg" alt="Elliot Academy" className="w-full h-[420px] object-cover opacity-85" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 rounded-xl bg-navy/70 border border-gold/30">
+                      <Network className="w-10 h-10 text-gold" />
+                    </div>
+                    <div>
+                      <p className="text-gold uppercase tracking-[0.2em] text-xs mb-1">Visual Focus</p>
+                      <p className="text-silver text-lg">Blockchain network, digital nodes, and future-ready training</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-navy-light">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-14">
-            <h3 className="font-serif text-4xl text-silver mb-4">Blockchain Certification Programme</h3>
-            <p className="text-silver-dim text-lg max-w-3xl mx-auto">
-              A focused certification program designed to build strong Blockchain knowledge and practical skills for modern technology careers.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10">
-            <div className="bg-navy rounded-xl border border-navy-lighter p-6 text-center">
-              <Clock className="w-10 h-10 text-gold mx-auto mb-4" />
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Duration</p>
-              <p className="text-silver font-semibold">8-12 Weeks</p>
-            </div>
-            <div className="bg-navy rounded-xl border border-navy-lighter p-6 text-center">
-              <BookOpen className="w-10 h-10 text-gold mx-auto mb-4" />
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Weekly Time</p>
-              <p className="text-silver font-semibold">6 Hours</p>
-            </div>
-            <div className="bg-navy rounded-xl border border-navy-lighter p-6 text-center">
-              <Users className="w-10 h-10 text-gold mx-auto mb-4" />
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Batch</p>
-              <p className="text-silver font-semibold">Morning & Evening</p>
-            </div>
-            <div className="bg-navy rounded-xl border border-navy-lighter p-6 text-center">
-              <GraduationCap className="w-10 h-10 text-gold mx-auto mb-4" />
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Level</p>
-              <p className="text-silver font-semibold">Beginner to Industry-Ready</p>
-            </div>
-            <div className="bg-navy rounded-xl border border-navy-lighter p-6 text-center">
-              <Briefcase className="w-10 h-10 text-gold mx-auto mb-4" />
-              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">First Batch</p>
-              <p className="text-silver font-semibold">Minimum 100 Students</p>
-            </div>
-          </div>
-
-          <div className="bg-navy rounded-2xl border border-gold/20 p-8">
-            <h4 className="font-bold text-gold text-xl mb-4">Certification</h4>
-            <p className="text-silver-dim mb-4">
-              Participants who successfully complete the program will receive a professional certification in Blockchain Technology.
-            </p>
-            <p className="text-silver-dim">
-              Certification Reference Framework: Aligned with international academic and industry standards, including methodologies commonly taught in leading institutions such as Columbia University.
-            </p>
-          </div>
-        </div>
-      </section>
+      {divider}
 
       <section className="py-20 bg-navy">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
             <h3 className="font-serif text-4xl text-silver mb-4">What You Will Learn</h3>
-            <p className="text-silver-dim max-w-2xl mx-auto">
-              Focused curriculum blocks designed for clear learning outcomes and practical industry relevance.
+            <p className="text-silver-dim max-w-3xl mx-auto">
+              Clean, practical modules focused on blockchain fundamentals first, with AI shown only where it supports blockchain systems.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-10">
-            <div className="bg-navy-light rounded-2xl border border-navy-lighter p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <Link2 className="w-12 h-12 text-gold" />
-                <div>
-                  <h4 className="font-bold text-gold text-2xl">Core Blockchain Topics</h4>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Blockchain fundamentals</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Cryptocurrency and digital assets</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Smart contracts</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Web3 and decentralized applications</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Blockchain security and transparency</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Real-world blockchain use cases</div>
-              </div>
-            </div>
-
-            <div className="bg-navy-light rounded-2xl border border-navy-lighter p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <Brain className="w-12 h-12 text-gold" />
-                <div>
-                  <h4 className="font-bold text-gold text-2xl">AI Applications Within Blockchain</h4>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4 mb-5">
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">AI for blockchain data analysis</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Automation in smart contracts</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Fraud detection and security monitoring</div>
-                <div className="bg-navy rounded-lg border border-navy-lighter p-4 text-silver-dim">Predictive analytics in blockchain networks</div>
-              </div>
-              <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
-                <p className="text-silver-dim text-sm">
-                  AI is used as a supporting technology within blockchain systems.
-                </p>
-              </div>
+          <div className="mb-8">
+            <p className="text-gold text-xs uppercase tracking-[0.22em] mb-5">Core Blockchain Topics</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {coreTopics.map((topic) => (
+                <motion.div
+                  key={topic}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ y: -4, borderColor: 'rgba(212,175,55,0.5)' }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
+                >
+                  <Link2 className="w-10 h-10 text-gold mb-4" />
+                  <p className="text-silver font-medium">{topic}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">01</p>
-              <p className="text-silver-dim">Blockchain fundamentals</p>
+          <div>
+            <p className="text-gold text-xs uppercase tracking-[0.22em] mb-5">AI Within Blockchain</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
+              {aiTopics.map((topic) => (
+                <motion.div
+                  key={topic}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ y: -4, borderColor: 'rgba(212,175,55,0.5)' }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
+                >
+                  <Brain className="w-10 h-10 text-gold mb-4" />
+                  <p className="text-silver font-medium">{topic}</p>
+                </motion.div>
+              ))}
             </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">02</p>
-              <p className="text-silver-dim">Cryptocurrency understanding</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">03</p>
-              <p className="text-silver-dim">Smart contract knowledge</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">04</p>
-              <p className="text-silver-dim">Web3 concepts</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">05</p>
-              <p className="text-silver-dim">Blockchain security awareness</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">06</p>
-              <p className="text-silver-dim">Real-world application skills</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">07</p>
-              <p className="text-silver-dim">Industry readiness</p>
-            </div>
-            <div className="bg-navy-light rounded-xl border border-navy-lighter p-5 text-center">
-              <p className="text-gold font-bold mb-2">08</p>
-              <p className="text-silver-dim">Supporting AI awareness</p>
+            <div className="rounded-xl border border-gold/30 bg-gold/10 p-5 max-w-2xl">
+              <p className="text-silver-dim text-sm">
+                AI is used as a supporting technology within blockchain systems.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      {divider}
 
       <section className="py-20 bg-navy-light">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto bg-navy rounded-2xl border border-navy-lighter p-8 text-center">
-            <ShieldCheck className="w-12 h-12 text-gold mx-auto mb-5" />
-            <h3 className="font-serif text-4xl text-silver mb-5">Our Aim</h3>
-            <p className="text-silver-dim text-lg leading-relaxed">
-              To create skilled professionals ready for the future of blockchain technology, where transparency, security, and decentralized systems are transforming industries worldwide.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-xl border border-gold/20 rounded-[2rem] p-10 shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+          >
+            <motion.div
+              animate={{
+                boxShadow: [
+                  '0 0 0 rgba(212,175,55,0.1)',
+                  '0 0 35px rgba(212,175,55,0.32)',
+                  '0 0 0 rgba(212,175,55,0.1)',
+                ],
+                scale: [1, 1.04, 1],
+              }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-24 h-24 rounded-full border border-gold/40 bg-navy/60 flex items-center justify-center mx-auto mb-6"
+            >
+              <FileBadge className="w-12 h-12 text-gold" />
+            </motion.div>
+            <h3 className="font-serif text-4xl text-silver mb-4">Professional Certificate in Blockchain Technology</h3>
+            <p className="text-silver-dim text-lg max-w-3xl mx-auto">
+              Aligned with global academic and industry standards, including methodologies taught in leading institutions such as Columbia University.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {divider}
+
+      <section className="py-20 bg-navy">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h3 className="font-serif text-4xl text-silver mb-4">Curriculum Timeline</h3>
+            <p className="text-silver-dim max-w-2xl mx-auto">
+              A structured path from foundations to project-based certification.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/10 via-gold/60 to-gold/10" />
+            <div className="space-y-6">
+              {curriculumWeeks.map((week, index) => (
+                <motion.div
+                  key={week}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.45, delay: index * 0.04 }}
+                  className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:mr-auto' : 'md:pl-8 md:ml-auto'} pl-12 md:pl-0`}
+                >
+                  <div className="absolute left-0 md:left-auto md:right-[-8px] top-7 w-4 h-4 rounded-full bg-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]" />
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.18)]">
+                    <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">Module {index + 1}</p>
+                    <p className="text-silver text-lg">{week}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gold">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl text-navy mb-5">Start Your Blockchain Journey Today</h2>
-          <p className="text-navy/80 max-w-3xl mx-auto mb-10">
-            Become part of the first batch of ELLIOT Academy and build skills for the future technology industry.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="mailto:contact@elliotgroup.com" className="inline-block px-8 py-4 bg-navy text-gold font-bold uppercase tracking-[0.16em] hover:bg-navy-light transition-colors text-sm">
-              Apply Now
-            </a>
-            <a href="mailto:contact@elliotgroup.com" className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] hover:bg-navy/10 transition-colors text-sm">
-              Register for First Batch
-            </a>
-            <a href="mailto:contact@elliotgroup.com" className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] hover:bg-navy/10 transition-colors text-sm">
-              Contact Us
-            </a>
+      {divider}
+
+      <section className="py-20 bg-navy-light">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h3 className="font-serif text-4xl text-silver mb-4">Skills Students Will Gain</h3>
+            <p className="text-silver-dim max-w-2xl mx-auto">
+              Key outcomes presented as clean metrics and capability areas.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {skillStats.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-7 text-center shadow-[0_15px_40px_rgba(0,0,0,0.18)]"
+              >
+                <CountUp value={item.value} suffix={item.suffix} />
+                <p className="text-silver-dim mt-4">{item.label}</p>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {divider}
+
+      <section className="py-20 bg-navy">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-gold text-xs uppercase tracking-[0.22em] mb-4">Our Aim</p>
+            <h3 className="font-serif text-4xl md:text-5xl text-silver leading-tight">
+              {aimText.split('').map((char, index) => (
+                <motion.span
+                  key={`${char}-${index}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.7 }}
+                  transition={{ duration: 0.03, delay: index * 0.018 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      {divider}
+
+      <section className="py-20 bg-[linear-gradient(180deg,#b68b22_0%,#d4af37_52%,#c4951e_100%)]">
+        <div className="container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-navy/70 text-xs uppercase tracking-[0.22em] mb-4">Call to Action</p>
+            <h2 className="font-serif text-3xl md:text-5xl text-navy mb-4">Start Your Blockchain Journey Today</h2>
+            <p className="text-navy/80 max-w-2xl mx-auto mb-10 text-lg">
+              Join the first batch of ELLIOT Academy
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="mailto:contact@elliotgroup.com"
+                className="inline-block px-8 py-4 bg-navy text-gold font-bold uppercase tracking-[0.16em] text-sm rounded-xl shadow-[0_0_25px_rgba(10,20,40,0.2)] hover:shadow-[0_0_35px_rgba(10,20,40,0.35)] hover:-translate-y-0.5 transition-all duration-200"
+              >
+                Apply Now
+              </a>
+              <a
+                href="mailto:contact@elliotgroup.com"
+                className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl hover:bg-navy/10 hover:shadow-[0_0_25px_rgba(10,20,40,0.18)] transition-all duration-200"
+              >
+                Register
+              </a>
+              <a
+                href="mailto:contact@elliotgroup.com"
+                className="inline-block px-8 py-4 border border-navy text-navy font-bold uppercase tracking-[0.16em] text-sm rounded-xl hover:bg-navy/10 hover:shadow-[0_0_25px_rgba(10,20,40,0.18)] transition-all duration-200"
+              >
+                Contact Us
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

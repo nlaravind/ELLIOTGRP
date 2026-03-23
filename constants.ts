@@ -78,6 +78,6 @@ export const VERTICALS: Vertical[] = [
     title: 'ELLIOT ACADEMY',
     description: 'Blockchain and AI certification programmes designed to take learners from beginner level to industry-ready professionals.',
     icon: GraduationCap,
-    image: '/images/blockchain.jpg'
+    image: '/images/academy.jpg'
   }
 ];
