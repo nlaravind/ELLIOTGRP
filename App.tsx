@@ -114,8 +114,6 @@ function HomePage() {
           </div>
         </section>
 
-        <VerticalsGrid />
-
         <section id="vision" className="py-24 bg-[linear-gradient(180deg,#09111f_0%,#0d1c37_48%,#09111f_100%)] scroll-mt-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-1/4 w-80 h-80 bg-gold/10 blur-3xl rounded-full"></div>
@@ -280,6 +278,8 @@ function HomePage() {
             </div>
           </div>
         </section>
+
+        <VerticalsGrid />
 
         <section id="innovation" className="py-24 relative overflow-hidden bg-navy scroll-mt-20">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-navy-light blur-3xl rounded-full pointer-events-none opacity-50"></div>
