@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, Loader2 } from 'lucide-react';
 import { VERTICALS } from '../constants';
-import { generateResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
 export const GeminiAssistant: React.FC = () => {
@@ -29,6 +28,7 @@ export const GeminiAssistant: React.FC = () => {
     setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
     setIsLoading(true);
 
+    const { generateResponse } = await import('../services/geminiService');
     const responseText = await generateResponse(userMessage);
 
     setMessages(prev => [...prev, { role: 'model', text: responseText }]);

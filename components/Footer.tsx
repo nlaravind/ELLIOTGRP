@@ -13,6 +13,7 @@ export const Footer: React.FC = () => {
     { id: 'fintech', label: 'Elliot Fintech' },
     { id: 'aviation', label: 'Elliot Aviation' },
     { id: 'sustainable-energy', label: 'Elliot Sustainable Energy' },
+    { id: 'academy', label: 'Elliot Academy' },
   ];
 
   return (

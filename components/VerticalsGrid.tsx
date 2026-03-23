@@ -12,6 +12,7 @@ const routeMap: { [key: string]: string } = {
   fintech: '/fintech',
   aviation: '/aviation',
   'sustainable-energy': '/sustainable-energy',
+  academy: '/academy',
 };
 
 export const VerticalsGrid: React.FC = () => {
@@ -36,7 +37,6 @@ export const VerticalsGrid: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.2 }}
-              className={vertical.id === 'sustainable-energy' ? 'energy-card lg:col-span-2' : ''}
             >
               <Link
                 to={routeMap[vertical.id]}

@@ -1,23 +1,50 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
 import { VerticalsGrid } from './components/VerticalsGrid';
-import { GeminiAssistant } from './components/GeminiAssistant';
 import { Footer } from './components/Footer';
-import { EVBusinessPage } from './pages/EVBusinessPage';
-import { RealEstatePage } from './pages/RealEstatePage';
-import { FintechPage } from './pages/FintechPage';
-import { BlockchainPage } from './pages/BlockchainPage';
-import { AviationPage } from './pages/AviationPage';
-import { CafePage } from './pages/CafePage';
-import { CryptoPage } from './pages/CryptoPage';
-// @ts-ignore: module may not be recognized by TS yet, but file exists
-import SustainableEnergyPage from './pages/SustainableEnergyPage'; // new vertical page
 
 import { VERTICALS } from './constants';
+
+const GeminiAssistant = lazy(() =>
+  import('./components/GeminiAssistant').then((module) => ({ default: module.GeminiAssistant }))
+);
+const EVBusinessPage = lazy(() =>
+  import('./pages/EVBusinessPage').then((module) => ({ default: module.EVBusinessPage }))
+);
+const RealEstatePage = lazy(() =>
+  import('./pages/RealEstatePage').then((module) => ({ default: module.RealEstatePage }))
+);
+const FintechPage = lazy(() =>
+  import('./pages/FintechPage').then((module) => ({ default: module.FintechPage }))
+);
+const BlockchainPage = lazy(() =>
+  import('./pages/BlockchainPage').then((module) => ({ default: module.BlockchainPage }))
+);
+const AviationPage = lazy(() =>
+  import('./pages/AviationPage').then((module) => ({ default: module.AviationPage }))
+);
+const CafePage = lazy(() =>
+  import('./pages/CafePage').then((module) => ({ default: module.CafePage }))
+);
+const CryptoPage = lazy(() =>
+  import('./pages/CryptoPage').then((module) => ({ default: module.CryptoPage }))
+);
+const AcademyPage = lazy(() =>
+  import('./pages/AcademyPage').then((module) => ({ default: module.AcademyPage }))
+);
+const SustainableEnergyPage = lazy(() => import('./pages/SustainableEnergyPage'));
+
+const PageLoader: React.FC = () => (
+  <div className="min-h-screen bg-navy text-silver flex items-center justify-center">
+    <div className="text-center">
+      <p className="text-gold text-xs uppercase tracking-[0.3em] mb-4">ELLIOT GROUP</p>
+      <p className="text-silver-dim">Loading experience...</p>
+    </div>
+  </div>
+);
 
 function HomePage() {
   return (
@@ -39,7 +66,7 @@ function HomePage() {
               A Diversified Global Enterprise
             </p>
             <p className="text-silver-dim text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Building globally respected enterprises across clean mobility, sustainable energy, infrastructure, financial governance, blockchain innovation, and aviation excellence.
+              Building globally respected enterprises across clean mobility, sustainable energy, infrastructure, financial governance, blockchain innovation, aviation excellence, and future-ready education.
             </p>
             <div className="flex justify-center gap-6">
               <a href="#sectors" className="inline-block px-10 py-4 border border-gold text-gold font-bold uppercase tracking-[0.2em] text-sm hover:bg-gold hover:text-navy transition-all duration-300">
@@ -216,7 +243,9 @@ function HomePage() {
         </section>
       </main>
 
-      <GeminiAssistant />
+      <Suspense fallback={null}>
+        <GeminiAssistant />
+      </Suspense>
       <Footer />
     </div>
   );
@@ -226,17 +255,20 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/ev-business" element={<EVBusinessPage />} />
-        <Route path="/real-estate" element={<RealEstatePage />} />
-        <Route path="/fintech" element={<FintechPage />} />
-        <Route path="/blockchain" element={<BlockchainPage />} />
-        <Route path="/aviation" element={<AviationPage />} />
-        <Route path="/cafe" element={<CafePage />} />
-        <Route path="/crypto" element={<CryptoPage />} />
-        <Route path="/sustainable-energy" element={<SustainableEnergyPage />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/ev-business" element={<EVBusinessPage />} />
+          <Route path="/real-estate" element={<RealEstatePage />} />
+          <Route path="/fintech" element={<FintechPage />} />
+          <Route path="/blockchain" element={<BlockchainPage />} />
+          <Route path="/aviation" element={<AviationPage />} />
+          <Route path="/cafe" element={<CafePage />} />
+          <Route path="/crypto" element={<CryptoPage />} />
+          <Route path="/sustainable-energy" element={<SustainableEnergyPage />} />
+          <Route path="/academy" element={<AcademyPage />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

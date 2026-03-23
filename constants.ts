@@ -6,7 +6,8 @@ import {
   Coffee, 
   TrendingUp, 
   Plane,
-  Sun
+  Sun,
+  GraduationCap
 } from 'lucide-react';
 import { Vertical } from './types';
 
@@ -71,5 +72,12 @@ export const VERTICALS: Vertical[] = [
     description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and sustainable energy infrastructure.',
     icon: Sun,
     image: '/images/sustainable-energy.jpg'
+  },
+  {
+    id: 'academy',
+    title: 'ELLIOT ACADEMY',
+    description: 'Blockchain and AI certification programmes designed to take learners from beginner level to industry-ready professionals.',
+    icon: GraduationCap,
+    image: '/images/blockchain.jpg'
   }
 ];
