@@ -311,24 +311,36 @@ function HomePage() {
         <section id="contact" className="py-20 bg-navy-light border-y border-navy-lighter scroll-mt-20">
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-serif text-3xl text-silver mb-8">Ready to engage with a globally competitive enterprise?</h2>
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-5 py-2 mb-4 rounded-full border border-gold/50 bg-navy/50 text-gold uppercase tracking-widest text-xs font-bold">
-                <MapPin size={14} />
-                <span>Location</span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55 }}
+              whileHover={{ y: -4 }}
+              className="max-w-2xl mx-auto mb-8 rounded-[1.75rem] border border-gold/20 bg-white/5 backdrop-blur-xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
+            >
+              <div className="flex justify-center mb-5">
+                <div className="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.14)]">
+                  <MapPin size={28} className="text-gold" />
+                </div>
               </div>
-              <p className="text-gold font-bold tracking-widest uppercase text-sm mb-2">Via Moka</p>
-              <p className="text-silver-dim text-base">
+              <p className="text-gold font-bold tracking-[0.24em] uppercase text-xs mb-3">Location</p>
+              <p className="font-serif text-2xl text-silver mb-3">Via Moka</p>
+              <p className="text-silver-dim text-base max-w-xl mx-auto leading-relaxed mb-6">
                 222, Shankarpalli Rd, Janwada, Hyderabad, Telangana 500075
               </p>
-              <a
+              <motion.a
                 href="https://maps.app.goo.gl/iEA81kEJowzsyT9T6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-4 text-gold hover:text-silver transition-colors text-sm uppercase tracking-widest"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 rounded-xl border border-gold/40 bg-gold/10 px-6 py-3 text-gold font-bold uppercase tracking-[0.16em] text-sm shadow-[0_0_24px_rgba(212,175,55,0.12)] hover:bg-gold hover:text-navy hover:shadow-[0_0_32px_rgba(212,175,55,0.24)] transition-all duration-300"
               >
-                View on Google Maps
-              </a>
-            </div>
+                <MapPin size={16} />
+                <span>View on Google Maps</span>
+              </motion.a>
+            </motion.div>
             <a
               href="mailto:contact@elliotgroup.com"
               className="inline-block px-12 py-4 border border-gold text-gold font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300 text-sm"
