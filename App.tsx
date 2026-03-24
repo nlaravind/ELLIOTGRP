@@ -299,10 +299,11 @@ function HomePage() {
               </p>
             </div>
             <div className="relative group">
+              <div className="absolute -inset-3 rounded-[2.25rem] bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <img
                 src="/images/philosophy.jpg"
                 alt="Global Enterprise"
-                className="relative z-10 w-full h-auto border border-navy-lighter group-hover:border-gold transition-all duration-700 shadow-2xl"
+                className="relative z-10 w-full h-auto rounded-[2.25rem] border border-navy-lighter group-hover:border-gold transition-all duration-700 shadow-2xl overflow-hidden"
               />
             </div>
           </div>
@@ -343,7 +344,7 @@ function HomePage() {
             </motion.div>
             <a
               href="mailto:contact@elliotgroup.com"
-              className="inline-block px-12 py-4 border border-gold text-gold font-bold uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all duration-300 text-sm"
+              className="inline-block px-12 py-4 rounded-[1.2rem] border border-gold/70 bg-gold/10 text-gold font-bold uppercase tracking-[0.2em] shadow-[0_0_24px_rgba(212,175,55,0.12)] hover:bg-gold hover:text-navy hover:shadow-[0_0_32px_rgba(212,175,55,0.24)] transition-all duration-300 text-sm"
             >
               Investor Relations
             </a>
