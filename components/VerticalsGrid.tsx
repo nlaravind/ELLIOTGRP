@@ -52,7 +52,7 @@ export const VerticalsGrid: React.FC = () => {
 
                 <div className="relative z-10 p-8 h-full flex flex-col min-h-[300px] justify-between bg-navy-light/60 group-hover:bg-navy/40 transition-colors">
                   <div className="flex justify-between items-start">
-                    <div className="p-3 bg-navy rounded border border-navy-lighter group-hover:bg-gold group-hover:text-navy transition-all duration-300 text-gold shadow-lg">
+                    <div className="p-3 bg-navy rounded-2xl border border-navy-lighter group-hover:bg-gold group-hover:text-navy transition-all duration-300 text-gold shadow-lg">
                       <vertical.icon size={32} strokeWidth={1.5} />
                     </div>
                     <span className="text-5xl font-serif text-navy-lighter font-bold group-hover:text-gold/20 transition-colors">
