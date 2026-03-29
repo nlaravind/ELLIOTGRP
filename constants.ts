@@ -72,17 +72,17 @@ export const VERTICALS: Vertical[] = [
     image: '/images/cafe.jpg',
   },
   {
-    id: 'sustainable-energy',
-    title: 'ELLIOT SUSTAINABLE ENERGY',
-    description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and sustainable energy infrastructure.',
-    icon: Sun,
-    image: '/images/sustainable-energy.jpg',
-  },
-  {
     id: 'academia',
     title: 'ELLIOT ACADEMIA',
     description: 'Blockchain and AI certification programmes designed to take learners from beginner level to industry-ready professionals.',
     icon: GraduationCap,
     image: '/images/academy.jpg',
+  },
+  {
+    id: 'sustainable-energy',
+    title: 'ELLIOT SUSTAINABLE ENERGY',
+    description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and sustainable energy infrastructure.',
+    icon: Sun,
+    image: '/images/sustainable-energy.jpg',
   },
 ];
