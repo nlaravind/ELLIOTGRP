@@ -65,13 +65,6 @@ export const VERTICALS: Vertical[] = [
     image: '/images/aviation.jpg',
   },
   {
-    id: 'hospitality',
-    title: 'ELLIOT HOSPITALITY',
-    description: 'Luxury stays, premium guest experiences, and destination-driven hospitality ventures for modern travelers.',
-    icon: BedDouble,
-    image: '/images/cafe.jpg',
-  },
-  {
     id: 'academia',
     title: 'ELLIOT ACADEMIA',
     description: 'Blockchain and AI certification programmes designed to take learners from beginner level to industry-ready professionals.',
@@ -84,5 +77,12 @@ export const VERTICALS: Vertical[] = [
     description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and sustainable energy infrastructure.',
     icon: Sun,
     image: '/images/sustainable-energy.jpg',
+  },
+  {
+    id: 'hospitality',
+    title: 'ELLIOT HOSPITALITY',
+    description: 'Luxury stays, premium guest experiences, and destination-driven hospitality ventures for modern travelers.',
+    icon: BedDouble,
+    image: '/images/Hospitality.jpg',
   },
 ];

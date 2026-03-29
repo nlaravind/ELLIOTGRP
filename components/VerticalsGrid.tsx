@@ -34,6 +34,11 @@ export const VerticalsGrid: React.FC = () => {
           {VERTICALS.map((vertical, index) => (
             <motion.div
               key={vertical.id}
+              className={
+                vertical.id === 'hospitality'
+                  ? 'md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto lg:col-span-1 lg:max-w-none lg:mx-0 lg:col-start-2'
+                  : undefined
+              }
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
