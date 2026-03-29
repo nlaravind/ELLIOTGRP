@@ -5,15 +5,16 @@ import { VERTICALS } from '../constants';
 
 export const Footer: React.FC = () => {
   const footerSectors = [
-    { id: 'crypto', label: 'Elliott Crypto' },
+    { id: 'crypto', label: 'Elliot Crypto' },
     { id: 'ev', label: 'Elliot EV Business' },
-    { id: 'realestate', label: 'Elliot Real Estate' },
-    { id: 'blockchain', label: 'Elliott Blockchain' },
-    { id: 'cafe', label: 'Cafe Elliott' },
+    { id: 'ventures', label: 'Elliot Ventures' },
+    { id: 'blockchain', label: 'Elliot Blockchain' },
+    { id: 'cafe', label: 'Cafe Elliot' },
     { id: 'fintech', label: 'Elliot Fintech' },
-    { id: 'aviation', label: 'Elliot Aviation' },
+    { id: 'aviation', label: 'Elliot Aviations' },
+    { id: 'hospitality', label: 'Elliot Hospitality' },
     { id: 'sustainable-energy', label: 'Elliot Sustainable Energy' },
-    { id: 'academy', label: 'Elliot Academy' },
+    { id: 'academy', label: 'Elliot Academia' },
   ];
 
   return (

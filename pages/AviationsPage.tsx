@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Plane, Star, Heart } from 'lucide-react';
 import { ScrollProgress } from '../components/ScrollProgress';
 
-export const AviationPage: React.FC = () => {
+export const AviationsPage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       <ScrollProgress />
@@ -22,7 +22,7 @@ export const AviationPage: React.FC = () => {
             <Plane size={64} className="text-gold" />
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            Elliot Aviation
+            Elliot Aviations
           </h1>
           <h2 className="text-gold tracking-[0.3em] text-lg md:text-xl font-bold mb-6 uppercase">
             Where Privacy Meets Prestige
@@ -44,7 +44,7 @@ export const AviationPage: React.FC = () => {
             Discretion. Comfort. <span className="text-gold italic">Elite Standards</span>
           </h3>
           <p className="text-silver-dim text-lg mb-8 max-w-3xl">
-            Elliot Aviation delivers unparalleled luxury and privacy to high-net-worth individuals, corporate executives, and elite travelers. Every journey is crafted with meticulous attention to confidentiality and comfort.
+            Elliot Aviations delivers unparalleled luxury and privacy to high-net-worth individuals, corporate executives, and elite travelers. Every journey is crafted with meticulous attention to confidentiality and comfort.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
@@ -76,7 +76,7 @@ export const AviationPage: React.FC = () => {
                 <Plane className="w-12 h-12 text-gold" />
               </div>
               <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Private Aviation</h4>
+                <h4 className="font-bold text-silver text-xl mb-2">Private Aviations</h4>
                 <p className="text-silver-dim">Exclusive charter flights with personalized itineraries and premium amenities.</p>
               </div>
             </div>

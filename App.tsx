@@ -16,8 +16,8 @@ const GeminiAssistant = lazy(() =>
 const EVBusinessPage = lazy(() =>
   import('./pages/EVBusinessPage').then((module) => ({ default: module.EVBusinessPage }))
 );
-const RealEstatePage = lazy(() =>
-  import('./pages/RealEstatePage').then((module) => ({ default: module.RealEstatePage }))
+const VenturesPage = lazy(() =>
+  import('./pages/VenturesPage').then((module) => ({ default: module.VenturesPage }))
 );
 const FintechPage = lazy(() =>
   import('./pages/FintechPage').then((module) => ({ default: module.FintechPage }))
@@ -25,17 +25,20 @@ const FintechPage = lazy(() =>
 const BlockchainPage = lazy(() =>
   import('./pages/BlockchainPage').then((module) => ({ default: module.BlockchainPage }))
 );
-const AviationPage = lazy(() =>
-  import('./pages/AviationPage').then((module) => ({ default: module.AviationPage }))
+const AviationsPage = lazy(() =>
+  import('./pages/AviationsPage').then((module) => ({ default: module.AviationsPage }))
 );
 const CafePage = lazy(() =>
   import('./pages/CafePage').then((module) => ({ default: module.CafePage }))
 );
+const HospitalityPage = lazy(() =>
+  import('./pages/HospitalityPage').then((module) => ({ default: module.HospitalityPage }))
+);
 const CryptoPage = lazy(() =>
   import('./pages/CryptoPage').then((module) => ({ default: module.CryptoPage }))
 );
-const AcademyPage = lazy(() =>
-  import('./pages/AcademyPage').then((module) => ({ default: module.AcademyPage }))
+const AcademiaPage = lazy(() =>
+  import('./pages/AcademiaPage').then((module) => ({ default: module.AcademiaPage }))
 );
 const SustainableEnergyPage = lazy(() => import('./pages/SustainableEnergyPage'));
 
@@ -70,7 +73,7 @@ function HomePage() {
               A Diversified Global Enterprise
             </p>
             <p className="text-silver-dim text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Building globally respected enterprises across clean mobility, sustainable energy, infrastructure, financial governance, blockchain innovation, aviation excellence, and future-ready education.
+              Building globally respected enterprises across clean mobility, sustainable energy, venture creation, hospitality, financial governance, blockchain innovation, aviation excellence, and future-ready academia.
             </p>
             <div className="flex justify-center gap-6">
               <a
@@ -174,6 +177,7 @@ function HomePage() {
                     'Financial governance',
                     'Blockchain innovation',
                     'Aviation excellence',
+                    'Hospitality leadership',
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 text-silver-dim">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0"></div>
@@ -368,14 +372,18 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/ev-business" element={<EVBusinessPage />} />
-          <Route path="/real-estate" element={<RealEstatePage />} />
+          <Route path="/ventures" element={<VenturesPage />} />
+          <Route path="/real-estate" element={<VenturesPage />} />
           <Route path="/fintech" element={<FintechPage />} />
           <Route path="/blockchain" element={<BlockchainPage />} />
-          <Route path="/aviation" element={<AviationPage />} />
+          <Route path="/aviations" element={<AviationsPage />} />
+          <Route path="/aviation" element={<AviationsPage />} />
           <Route path="/cafe" element={<CafePage />} />
+          <Route path="/hospitality" element={<HospitalityPage />} />
           <Route path="/crypto" element={<CryptoPage />} />
           <Route path="/sustainable-energy" element={<SustainableEnergyPage />} />
-          <Route path="/academy" element={<AcademyPage />} />
+          <Route path="/academia" element={<AcademiaPage />} />
+          <Route path="/academy" element={<AcademiaPage />} />
         </Routes>
       </Suspense>
     </Router>
@@ -383,3 +391,4 @@ function App() {
 }
 
 export default App;
+

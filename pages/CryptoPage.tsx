@@ -20,7 +20,7 @@ export const CryptoPage: React.FC = () => {
             <Zap size={64} className="text-gold" />
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            Elliott Crypto
+            ELLIOT Crypto
           </h1>
           <h2 className="text-gold tracking-[0.3em] text-lg md:text-xl font-bold mb-6 uppercase">
             Digital Capital for the Decentralized Future
@@ -49,7 +49,7 @@ export const CryptoPage: React.FC = () => {
             Not Hype. <span className="text-gold italic">Pure Structure.</span>
           </h3>
           <p className="text-silver-dim text-lg mb-8 max-w-3xl">
-            Elliott Crypto is the digital asset and cryptocurrency division of Elliott Group, focused on building secure, compliant, and scalable crypto financial infrastructure. We develop institutional-grade solutions for retail and institutional investors, Web3 startups, and emerging market users seeking financial inclusion.
+            ELLIOT Crypto is the digital asset and cryptocurrency division of ELLIOT Group, focused on building secure, compliant, and scalable crypto financial infrastructure. We develop institutional-grade solutions for retail and institutional investors, Web3 startups, and emerging market users seeking financial inclusion.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
@@ -122,17 +122,17 @@ export const CryptoPage: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-navy-light p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Zap className="w-12 h-12 text-gold mb-4" />
-              <h4 className="font-bold text-gold text-lg mb-2">Elliott Wallet</h4>
+              <h4 className="font-bold text-gold text-lg mb-2">ELLIOT Wallet</h4>
               <p className="text-silver-dim">Secure, user-friendly custody solution for retail and institutional users.</p>
             </div>
             <div className="bg-navy-light p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Globe className="w-12 h-12 text-gold mb-4" />
-              <h4 className="font-bold text-gold text-lg mb-2">Elliott Exchange</h4>
+              <h4 className="font-bold text-gold text-lg mb-2">ELLIOT Exchange</h4>
               <p className="text-silver-dim">High-liquidity trading platform with institutional-grade order matching.</p>
             </div>
             <div className="bg-navy-light p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Zap className="w-12 h-12 text-gold mb-4" />
-              <h4 className="font-bold text-gold text-lg mb-2">Elliott Token</h4>
+              <h4 className="font-bold text-gold text-lg mb-2">ELLIOT Token</h4>
               <p className="text-silver-dim">Native governance token powering the ecosystem with staking rewards.</p>
             </div>
             <div className="bg-navy-light p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
@@ -192,3 +192,4 @@ export const CryptoPage: React.FC = () => {
     </div>
   );
 };
+

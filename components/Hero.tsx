@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
           <span className="gold-gradient-text">GROUP</span>
         </h1>
         <p className="text-silver-dim text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light tracking-wide leading-relaxed">
-          A global conglomerate defining the cutting edge of <span className="text-silver font-medium">Crypto, Aviation, Real Estate,</span> and <span className="text-silver font-medium">Technology</span>.
+          A global conglomerate defining the cutting edge of <span className="text-silver font-medium">Crypto, Aviations, Ventures,</span> and <span className="text-silver font-medium">Technology</span>.
           We don't just predict the future; we engineer it.
         </p>
         

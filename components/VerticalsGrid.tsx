@@ -6,13 +6,14 @@ import { VERTICALS } from '../constants';
 const routeMap: { [key: string]: string } = {
   crypto: '/crypto',
   ev: '/ev-business',
-  realestate: '/real-estate',
+  ventures: '/ventures',
   blockchain: '/blockchain',
   cafe: '/cafe',
   fintech: '/fintech',
-  aviation: '/aviation',
+  aviation: '/aviations',
+  hospitality: '/hospitality',
   'sustainable-energy': '/sustainable-energy',
-  academy: '/academy',
+  academy: '/academia',
 };
 
 export const VerticalsGrid: React.FC = () => {

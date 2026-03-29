@@ -281,7 +281,7 @@ export const SustainableEnergyPage: React.FC = () => {
             </div>
 
             <div className="bg-navy-light p-8 rounded-lg border border-green-500/30 hover:border-green-500 transition-all">
-              <h4 className="font-bold text-xl text-silver mb-3">⛓️ elliott blockchain</h4>
+              <h4 className="font-bold text-xl text-silver mb-3">⛓️ ELLIOT blockchain</h4>
               <p className="text-silver-dim leading-relaxed">
                 Energy trading systems and transparent renewable energy credit management on blockchain technology.
               </p>
@@ -324,4 +324,5 @@ export const SustainableEnergyPage: React.FC = () => {
 };
 
 export default SustainableEnergyPage;
+
 

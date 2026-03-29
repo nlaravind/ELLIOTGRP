@@ -93,7 +93,7 @@ const faqs = [
   {
     question: 'Will I receive a certificate after completing the program?',
     answer:
-      'Yes. Participants who successfully complete the program will receive a Professional Certificate in Blockchain Technology issued by ELLIOT Academy.',
+      'Yes. Participants who successfully complete the program will receive a Professional Certificate in Blockchain Technology issued by Elliot Academia.',
   },
   {
     question: 'Is this program suitable for beginners?',
@@ -123,7 +123,7 @@ const faqs = [
   {
     question: 'How can I register for the program?',
     answer:
-      'You can register by filling the online application form, contacting the academy directly, and paying the registration fee to confirm your seat.',
+      'You can register by filling the online application form, contacting Elliot Academia directly, and paying the registration fee to confirm your seat.',
   },
 ];
 
@@ -173,7 +173,7 @@ const CountUp: React.FC<{ value: number; suffix?: string }> = ({ value, suffix =
   );
 };
 
-export const AcademyPage: React.FC = () => {
+export const AcademiaPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [faqSectionOpen, setFaqSectionOpen] = useState(false);
 
@@ -215,7 +215,7 @@ export const AcademyPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="font-serif text-5xl md:text-7xl font-bold mb-5 text-silver"
           >
-            ELLIOT ACADEMY
+            Elliot Academia
           </motion.h1>
           <motion.p
             variants={fadeUp}
@@ -291,13 +291,13 @@ export const AcademyPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8"
             >
-              <p className="text-gold text-xs uppercase tracking-[0.24em] mb-4">About ELLIOT Academy</p>
+              <p className="text-gold text-xs uppercase tracking-[0.24em] mb-4">About Elliot Academia</p>
               <h2 className="font-serif text-4xl text-silver mb-5">Blockchain Skills, Structured for Careers</h2>
               <p className="text-silver-dim text-lg leading-relaxed mb-5">
-                ELLIOT Academy is the education and training division of ELLIOT Group, focused on building practical blockchain skills for the future digital economy.
+                Elliot Academia is the education and training division of ELLIOT Group, focused on building practical blockchain skills for the future digital economy.
               </p>
               <p className="text-silver-dim text-lg leading-relaxed mb-5">
-                The academy prepares individuals to move from beginner level to industry-ready professionals through structured training, real-world case studies, and hands-on learning.
+                Elliot Academia prepares individuals to move from beginner level to industry-ready professionals through structured training, real-world case studies, and hands-on learning.
               </p>
             </motion.div>
 
@@ -310,7 +310,7 @@ export const AcademyPage: React.FC = () => {
             >
               <div className="absolute -inset-3 bg-gold/10 blur-2xl rounded-[2rem]" />
               <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
-                <img src="/images/academy.jpg" alt="Elliot Academy" className="w-full h-[420px] object-cover opacity-85" />
+                <img src="/images/academy.jpg" alt="Elliot Academia" className="w-full h-[420px] object-cover opacity-85" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex items-center gap-4">
@@ -539,7 +539,7 @@ export const AcademyPage: React.FC = () => {
               >
                 <div>
                   <p className="text-gold text-xs uppercase tracking-[0.22em] mb-3">Frequently Asked Questions</p>
-                  <h3 className="font-serif text-3xl text-silver">ELLIOT Academy Blockchain Certification Programme</h3>
+                  <h3 className="font-serif text-3xl text-silver">Elliot Academia Blockchain Certification Programme</h3>
                 </div>
                 <motion.span
                   animate={{ rotate: faqSectionOpen ? 180 : 0 }}
@@ -618,7 +618,7 @@ export const AcademyPage: React.FC = () => {
             <p className="text-navy/70 text-xs uppercase tracking-[0.22em] mb-4">Call to Action</p>
             <h2 className="font-serif text-3xl md:text-5xl text-navy mb-4">Start Your Blockchain Journey Today</h2>
             <p className="text-navy/80 max-w-2xl mx-auto mb-10 text-lg">
-              Join the first batch of ELLIOT Academy
+              Join the first batch of Elliot Academia
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
@@ -646,3 +646,4 @@ export const AcademyPage: React.FC = () => {
     </div>
   );
 };
+

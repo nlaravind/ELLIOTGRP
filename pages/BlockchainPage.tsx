@@ -22,7 +22,7 @@ export const BlockchainPage: React.FC = () => {
             <LinkIcon size={64} className="text-gold" />
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-silver">
-            elliott blockchain
+            ELLIOT blockchain
           </h1>
           <h2 className="text-gold tracking-[0.3em] text-lg md:text-xl font-bold mb-6 uppercase">
             Decentralizing Trust. Empowering Nations.
@@ -44,7 +44,7 @@ export const BlockchainPage: React.FC = () => {
             Proprietary <span className="text-gold italic">Blockchain</span> Ecosystem
           </h3>
           <p className="text-silver-dim text-lg mb-8 max-w-3xl">
-            elliott blockchain develops secure, scalable, and interoperable distributed ledger solutions designed for enterprises, governments, and fintech companies. Our focus extends to bridging the digital gap in developing nations.
+            ELLIOT blockchain develops secure, scalable, and interoperable distributed ledger solutions designed for enterprises, governments, and fintech companies. Our focus extends to bridging the digital gap in developing nations.
           </p>
         </div>
       </motion.section>
@@ -153,4 +153,5 @@ export const BlockchainPage: React.FC = () => {
     </div>
   );
 };
+
 
