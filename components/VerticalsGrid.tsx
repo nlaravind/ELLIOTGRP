@@ -10,10 +10,10 @@ const routeMap: { [key: string]: string } = {
   blockchain: '/blockchain',
   cafe: '/cafe',
   fintech: '/fintech',
-  aviation: '/aviations',
+  aviations: '/aviations',
   hospitality: '/hospitality',
   'sustainable-energy': '/sustainable-energy',
-  academy: '/academia',
+  academia: '/academia',
 };
 
 export const VerticalsGrid: React.FC = () => {

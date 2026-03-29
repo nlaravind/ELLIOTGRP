@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Coffee, Users, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Coffee, Lightbulb, Users } from 'lucide-react';
 import { ScrollProgress } from '../components/ScrollProgress';
 
 export const CafePage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       <ScrollProgress />
-      {/* Back Button */}
+
       <div className="container mx-auto px-6 pt-8">
         <a href="/#sectors" className="flex items-center gap-2 text-gold hover:text-silver transition-colors w-fit">
           <ArrowLeft size={20} />
@@ -15,7 +15,6 @@ export const CafePage: React.FC = () => {
         </a>
       </div>
 
-      {/* Hero Section */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-b from-navy to-navy-light">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center mb-6">
@@ -36,20 +35,18 @@ export const CafePage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* About Division */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-6 text-sm">About Cafe Elliot</h2>
           <h3 className="font-serif text-4xl text-silver mb-8 leading-tight">
-            Boutique Café Brand <span className="text-gold italic">Under Elliot Group</span>
+            Boutique Cafe Brand <span className="text-gold italic">Under Elliot Group</span>
           </h3>
           <p className="text-silver-dim text-lg mb-8 max-w-3xl">
-            Cafe Elliot is more than a coffee shop—it's a vibrant ecosystem where urban professionals, entrepreneurs, and creative minds converge. We craft premium beverage experiences while fostering innovation and meaningful connections.
+            Cafe Elliot is more than a coffee shop. It is a vibrant ecosystem where urban professionals, entrepreneurs, and creative minds converge. We craft premium beverage experiences while fostering innovation and meaningful connections.
           </p>
         </div>
       </motion.section>
 
-      {/* Experience */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">The Experience</h3>
@@ -57,12 +54,12 @@ export const CafePage: React.FC = () => {
             <div className="bg-navy p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Coffee className="w-12 h-12 text-gold mb-4" />
               <h4 className="font-bold text-gold text-lg mb-4">Specialty Coffee</h4>
-              <p className="text-silver-dim">Curated blends from finest global sources, expertly crafted by our barista artisans.</p>
+              <p className="text-silver-dim">Curated blends from the finest global sources, expertly crafted by our barista artisans.</p>
             </div>
             <div className="bg-navy p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Users className="w-12 h-12 text-gold mb-4" />
               <h4 className="font-bold text-gold text-lg mb-4">Business Lounge</h4>
-              <p className="text-silver-dim">Professional spaces with high-speed internet, private zones for meetings and cooperation.</p>
+              <p className="text-silver-dim">Professional spaces with high-speed internet, private zones for meetings, and productive collaboration.</p>
             </div>
             <div className="bg-navy p-8 rounded-lg border border-navy-lighter hover:border-gold transition-colors">
               <Lightbulb className="w-12 h-12 text-gold mb-4" />
@@ -73,66 +70,49 @@ export const CafePage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* Brand Position */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Our Brand Promise</h3>
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              <div className="flex gap-6">
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              ['Luxury + Creativity', 'Premium quality meeting contemporary creative expression.'],
+              ['Community and Connection', 'Fostering meaningful relationships and collaborative opportunities.'],
+              ['Innovation Forward', 'Embracing technology and modern design in every aspect.'],
+            ].map(([title, description]) => (
+              <div key={title} className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gold text-navy font-bold">✓</span>
+                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gold text-navy font-bold">+</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-silver text-lg mb-2">Luxury + Creativity</h4>
-                  <p className="text-silver-dim">Premium quality meeting contemporary creative expression.</p>
+                  <h4 className="font-bold text-silver text-lg mb-2">{title}</h4>
+                  <p className="text-silver-dim">{description}</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gold text-navy font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-silver text-lg mb-2">Community & Connection</h4>
-                  <p className="text-silver-dim">Fostering meaningful relationships and collaborative opportunities.</p>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gold text-navy font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-silver text-lg mb-2">Innovation Forward</h4>
-                  <p className="text-silver-dim">Embracing technology and modern design in every aspect.</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </motion.section>
 
-      {/* Expansion Plans */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h3 className="font-serif text-4xl text-silver mb-16 text-center">Expansion Strategy</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <h4 className="font-bold text-gold text-lg mb-4">Launch Phase</h4>
-              <p className="text-silver-dim">Hyderabad flagship location establishing the premium brand presence.</p>
+              <p className="text-silver-dim">A Hyderabad flagship location establishing premium brand presence and community identity.</p>
             </div>
             <div className="text-center">
               <h4 className="font-bold text-gold text-lg mb-4">Franchise Model</h4>
               <p className="text-silver-dim">Scalable partnerships bringing Cafe Elliot to major Indian cities.</p>
             </div>
             <div className="text-center">
-              <h4 className="font-bold text-gold text-lg mb-4">Smart Café Tech</h4>
+              <h4 className="font-bold text-gold text-lg mb-4">Smart Cafe Tech</h4>
               <p className="text-silver-dim">AI-powered ordering, IoT optimization, and digital experience integration.</p>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* CTA */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gold">
         <div className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-navy mb-8">Join the Community</h2>
@@ -144,6 +124,3 @@ export const CafePage: React.FC = () => {
     </div>
   );
 };
-
-
-

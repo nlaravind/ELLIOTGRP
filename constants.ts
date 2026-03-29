@@ -58,7 +58,7 @@ export const VERTICALS: Vertical[] = [
     image: '/images/fintech.jpg',
   },
   {
-    id: 'aviation',
+    id: 'aviations',
     title: 'ELLIOT AVIATIONS',
     description: 'Private jet charters and fractional ownership for the elite traveler who values time and comfort.',
     icon: Plane,
@@ -79,7 +79,7 @@ export const VERTICALS: Vertical[] = [
     image: '/images/sustainable-energy.jpg',
   },
   {
-    id: 'academy',
+    id: 'academia',
     title: 'ELLIOT ACADEMIA',
     description: 'Blockchain and AI certification programmes designed to take learners from beginner level to industry-ready professionals.',
     icon: GraduationCap,

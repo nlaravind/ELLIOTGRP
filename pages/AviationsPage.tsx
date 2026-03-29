@@ -76,7 +76,7 @@ export const AviationsPage: React.FC = () => {
                 <Plane className="w-12 h-12 text-gold" />
               </div>
               <div>
-                <h4 className="font-bold text-silver text-xl mb-2">Private Aviations</h4>
+                <h4 className="font-bold text-silver text-xl mb-2">Private Aviation Services</h4>
                 <p className="text-silver-dim">Exclusive charter flights with personalized itineraries and premium amenities.</p>
               </div>
             </div>

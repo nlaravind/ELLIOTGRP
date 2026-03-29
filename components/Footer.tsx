@@ -11,10 +11,10 @@ export const Footer: React.FC = () => {
     { id: 'blockchain', label: 'Elliot Blockchain' },
     { id: 'cafe', label: 'Cafe Elliot' },
     { id: 'fintech', label: 'Elliot Fintech' },
-    { id: 'aviation', label: 'Elliot Aviations' },
+    { id: 'aviations', label: 'Elliot Aviations' },
     { id: 'hospitality', label: 'Elliot Hospitality' },
     { id: 'sustainable-energy', label: 'Elliot Sustainable Energy' },
-    { id: 'academy', label: 'Elliot Academia' },
+    { id: 'academia', label: 'Elliot Academia' },
   ];
 
   return (
