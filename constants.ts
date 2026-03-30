@@ -73,10 +73,10 @@ export const VERTICALS: Vertical[] = [
   },
   {
     id: 'sustainable-energy',
-    title: 'ELLIOT SUSTAINABLE ENERGY',
-    description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and sustainable energy infrastructure.',
+    title: 'ELLIOT ENERGIES',
+    description: 'Focuses on renewable energy production, storage, and distribution, supporting solar energy, clean power systems, and advanced energy infrastructure.',
     icon: Sun,
-    image: '/images/sustainable-energy.jpg',
+    image: '/images/energies.jpg',
   },
   {
     id: 'hospitality',

@@ -40,7 +40,7 @@ const CryptoPage = lazy(() =>
 const AcademiaPage = lazy(() =>
   import('./pages/AcademiaPage').then((module) => ({ default: module.AcademiaPage }))
 );
-const SustainableEnergyPage = lazy(() => import('./pages/SustainableEnergyPage'));
+const EnergiesPage = lazy(() => import('./pages/EnergiesPage'));
 
 const PageLoader: React.FC = () => (
   <div className="min-h-screen bg-navy text-silver flex items-center justify-center">
@@ -73,7 +73,7 @@ function HomePage() {
               A Diversified Global Enterprise
             </p>
             <p className="text-silver-dim text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Building globally respected enterprises across clean mobility, sustainable energy, venture creation, hospitality, financial governance, blockchain innovation, aviation excellence, and future-ready academia.
+              Building globally respected enterprises across clean mobility, Elliot Energies, venture creation, hospitality, financial governance, blockchain innovation, aviation excellence, and future-ready academia.
             </p>
             <div className="flex justify-center gap-6">
               <a
@@ -299,7 +299,7 @@ function HomePage() {
                 Each vertical operates with institutional discipline while maintaining strategic alignment with group objectives. We prioritize sustainable value creation over short-term gains.
               </p>
               <p className="text-silver-dim text-lg leading-relaxed">
-                From clean mobility and sustainable energy to decentralized finance, every enterprise within Elliot Group meets the highest standards of governance, compliance, and impact.
+                From clean mobility and Elliot Energies to decentralized finance, every enterprise within Elliot Group meets the highest standards of governance, compliance, and impact.
               </p>
             </div>
             <div className="relative group">
@@ -381,7 +381,7 @@ function App() {
           <Route path="/cafe" element={<CafePage />} />
           <Route path="/hospitality" element={<HospitalityPage />} />
           <Route path="/crypto" element={<CryptoPage />} />
-          <Route path="/sustainable-energy" element={<SustainableEnergyPage />} />
+          <Route path="/sustainable-energy" element={<EnergiesPage />} />
           <Route path="/academia" element={<AcademiaPage />} />
           <Route path="/academy" element={<AcademiaPage />} />
         </Routes>

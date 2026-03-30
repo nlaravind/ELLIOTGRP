@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Sun, Wind, BatteryCharging, Zap, Leaf, TrendingUp, Network } from 'lucide-react';
 import { ScrollProgress } from '../components/ScrollProgress';
 
-export const SustainableEnergyPage: React.FC = () => {
+export const EnergiesPage: React.FC = () => {
   return (
     <div className="sectors-page min-h-screen bg-navy text-silver font-sans">
       <ScrollProgress />
@@ -48,20 +48,20 @@ export const SustainableEnergyPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* About Elliot Sustainable Energy */}
+      {/* About Elliot Energies */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <h2 className="text-gold font-bold tracking-widest uppercase mb-4 text-sm">About Division</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-8 leading-tight">
-            About <span className="text-green-400">Elliot Sustainable Energy</span>
+            About <span className="text-green-400">Elliot Energies</span>
           </h3>
           
           <div className="bg-navy-light p-8 rounded-lg border border-green-500/30 mb-12">
             <p className="text-silver-dim text-lg leading-relaxed mb-4">
-              Elliot Sustainable Energy is the renewable energy division of Elliot Group, focused on the development, production, and deployment of sustainable power solutions including solar, wind, and advanced energy storage technologies.
+              Elliot Energies is the renewable energy division of Elliot Group, focused on the development, production, and deployment of clean power solutions including solar, wind, and advanced energy storage technologies.
             </p>
             <p className="text-silver text-lg leading-relaxed">
-              We partner with governments, industries, and communities to build the clean energy infrastructure that powers a sustainable future.
+              We partner with governments, industries, and communities to build the energy infrastructure that powers a cleaner, more resilient future.
             </p>
           </div>
 
@@ -211,12 +211,12 @@ export const SustainableEnergyPage: React.FC = () => {
         </div>
       </motion.section>
 
-      {/* Sustainability Impact */}
+      {/* Energy Impact */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-24 bg-navy-light">
         <div className="container mx-auto px-6">
           <h2 className="text-center text-gold font-bold tracking-widest uppercase mb-4 text-sm">Impact</h2>
           <h3 className="font-serif text-4xl md:text-5xl text-silver mb-16 text-center">
-            Our <span className="text-green-400">Sustainability Impact</span>
+            Our <span className="text-green-400">Energy Impact</span>
           </h3>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -255,7 +255,7 @@ export const SustainableEnergyPage: React.FC = () => {
             Integration with <span className="text-gold">Elliot Group</span>
           </h3>
           <p className="text-silver-dim text-center max-w-2xl mx-auto mb-16 text-lg">
-            Our sustainable energy division connects seamlessly with other Elliot Group divisions, creating a powerful ecosystem of integrated solutions that drive transformative change.
+            Elliot Energies connects seamlessly with other Elliot Group divisions, creating a powerful ecosystem of integrated solutions that drive transformative change.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -291,7 +291,7 @@ export const SustainableEnergyPage: React.FC = () => {
           <div className="mt-16 bg-gradient-to-r from-green-500/10 to-blue-500/10 p-10 rounded-lg border border-green-500/30">
             <h4 className="font-bold text-2xl text-silver mb-4 text-center">A Complete Ecosystem Narrative</h4>
             <p className="text-silver-dim text-center text-lg leading-relaxed">
-              Elliot Sustainable Energy is the backbone of our entire ecosystem. It powers our EV charging networks, green buildings, financial innovations, and blockchain-enabled trading platforms. Together, these divisions create a comprehensive approach to sustainable development that touches every aspect of modern infrastructure.
+              Elliot Energies is the backbone of our entire ecosystem. It powers our EV charging networks, green buildings, financial innovations, and blockchain-enabled trading platforms. Together, these divisions create a comprehensive approach to modern energy infrastructure.
             </p>
           </div>
         </div>
@@ -300,16 +300,16 @@ export const SustainableEnergyPage: React.FC = () => {
       {/* CTA Section */}
       <motion.section initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.15 }} className="py-20 bg-gradient-to-r from-green-500 to-blue-500">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl text-navy font-bold mb-4">Ready to Power the Future?</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-navy font-bold mb-4">Ready to Build with Elliot Energies?</h2>
           <p className="text-navy-light text-lg mb-8 max-w-2xl mx-auto">
-            Join us in building a sustainable energy infrastructure that powers millions of lives and businesses worldwide.
+            Join us in building energy infrastructure that powers millions of lives and businesses worldwide.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <button className="px-10 py-4 bg-navy hover:bg-navy-light text-gold font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded">
               Get Started
             </button>
             <a 
-              href="https://sustainable.elliotgroup.com" 
+              href="https://energies.elliotgroup.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-10 py-4 border-2 border-navy text-navy hover:bg-navy hover:text-gold font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded"
@@ -323,6 +323,6 @@ export const SustainableEnergyPage: React.FC = () => {
   );
 };
 
-export default SustainableEnergyPage;
+export default EnergiesPage;
 
 
